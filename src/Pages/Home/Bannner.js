@@ -1,12 +1,12 @@
 import React from 'react';
-
+import picture from '../../image/carPart.jfif'
 const Bannner = () => {
       return (
             <div className=''>
                   <div class="hero min-h-screen">
-                        <div class="hero-content flex-col lg:flex-row-reverse">
+                        <div class="hero-content flex-col lg:flex-row-reverse justify-between">
                               <div className='flex-1 justify-center'>
-                              <img src="https://api.lorem.space/image/movie?w=260&h=400" class="max-w-sm rounded-lg shadow-2xl" />
+                              <img src={picture} class="max-w-sm rounded-lg shadow-2xl" />
                               </div>
                              
                               <div className='flex-1'>
