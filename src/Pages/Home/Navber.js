@@ -1,17 +1,21 @@
+import { signOut } from 'firebase/auth';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import auth from '../../firebase.init';
 
 const Navber = () => {
+     
       const manu = <>
             <li className=''><NavLink to='/'>Home</NavLink></li>
             <li><a>Prodect</a></li>
             <li><a>Service</a></li>
             <li><a>DashBoard</a></li>
-            <li><a>Login</a></li>
+            <li><NavLink to='/login'>Login</NavLink></li>
+            <li><button onClick={()=> signOut(auth)} className='btn'>Logout</button></li>
 
       </>
       return (
-            <div class="navbar text-black  sm:flex justify-between">
+            <div class="navbar bg-red-300 text-black  sm:flex justify-between">
                   <div class="navbar-start">
                         <div class="dropdown">
                               <label tabindex="0" class="btn btn-ghost lg:hidden">

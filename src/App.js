@@ -5,6 +5,8 @@ import Home from './Pages/Home/Home';
 import Navber from './Pages/Home/Navber';
 import Login from './Pages/Login/Login';
 import Register from './Pages/Login/Register';
+import Order from './Pages/Home/Order';
+import RequreAuth from './Pages/Login/RequreAuth.js'
 
 
 function App() {
@@ -13,6 +15,9 @@ function App() {
       <Navber></Navber>
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
+        <Route path='/order' element={<RequreAuth>
+          <Order></Order>
+        </RequreAuth>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
       </Routes>
