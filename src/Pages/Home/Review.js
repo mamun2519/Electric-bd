@@ -25,7 +25,12 @@ const Review = () => {
                               </ReviewCard>)
                         }
 
+                        
+
                   </div>
+                 <div className='my-3 text-right'>
+                 <button className='btn'>Vew all review..</button>
+                 </div>
             </div>
       );
 };

@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from '../Sheard/Footer';
 import Bannner from './Bannner';
 import BuisnessSumary from './BuisnessSumary';
 import Review from './Review';
@@ -11,6 +12,7 @@ const Home = () => {
                   <Tools></Tools>
                   <BuisnessSumary></BuisnessSumary>
                   <Review></Review>
+                  <Footer></Footer>
             </div>
       );
 };

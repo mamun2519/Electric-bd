@@ -11,7 +11,7 @@ const Navber = () => {
 
       </>
       return (
-            <div class="navbar bg-green-500 text-black  sm:flex justify-between">
+            <div class="navbar text-black  sm:flex justify-between">
                   <div class="navbar-start">
                         <div class="dropdown">
                               <label tabindex="0" class="btn btn-ghost lg:hidden">

@@ -1,4 +1,5 @@
 import React from 'react';
+import { AiOutlineLike } from 'react-icons/ai';
 
 const ReviewCard = ({ review }) => {
       const { name, img, comment, retings, country } = review
@@ -20,6 +21,10 @@ const ReviewCard = ({ review }) => {
                               </div>
                               <p>Retings: {retings}</p>
                               <p>{comment}</p>
+                              <div className='flex'>
+                              <span className='mt-1'><AiOutlineLike/> </span>
+                              <span className='mx-1'>0</span>
+                              </div>
                         </div>
                   </div>
             </div>
