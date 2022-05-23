@@ -1,4 +1,5 @@
 import React from 'react';
+import './custom.css'
 
 
 const product = ({ tool , navigate}) => {
@@ -10,7 +11,9 @@ const product = ({ tool , navigate}) => {
      
       return (
             <div class="card   shadow-xl">
-                  <figure><img src={img} alt="tools" /></figure>
+                  <figure><img className='service-img' 
+
+                   src={img} alt="tools" /></figure>
                   <div class="card-body">
                         <h2 class="card-title">
                               {name}
