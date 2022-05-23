@@ -1,3 +1,4 @@
+import { signOut } from 'firebase/auth';
 import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import toast from 'react-hot-toast';
@@ -9,7 +10,8 @@ import Loading from '../Sheard/Loading';
 const Order = () => {
       const [user] = useAuthState(auth)
       const { id } = useParams()
-      const [orderQuntity, setOrderQuentity] = useState(1)
+      const [orderQuntity, setOrderQuentity] = useState(5)
+      const navigate = useNavigate()
       const { data, isLoading , refetch } = useQuery(['/prodcut', id], () => fetch(`http://localhost:5000/product/${id}`).then(res => res.json()))
 
 
@@ -33,7 +35,7 @@ const Order = () => {
 
             }
             else {
-                  toast.error("sorry ")
+                  toast.error("sorry click possitive button")
             }
 
       }
@@ -69,14 +71,27 @@ const Order = () => {
                                     method: "POST",
                                     headers: {
                                           'Content-type': 'application/json',
+                                          'authorization': `Bearer ${localStorage.getItem('accessToken')}`
                                     },
                                     body: JSON.stringify(booking)
 
                               })
-                              .then(res => res.json())
+                              .then(res => {
+                                    if(res.status === 401 || res.status === 403){
+                                          signOut(auth)
+                                          localStorage.removeItem('accessToken')
+
+                                          navigate('/login')
+                                          
+
+                                    }
+                                    
+                                    
+                                    return res.json()})
                               .then(data => {
+                                    console.log(data);
                                     toast.success(data.message)
-                                    setOrderQuentity(1)
+                                    setOrderQuentity(5)
                               })
                         });
 
@@ -119,7 +134,7 @@ const Order = () => {
                                           <button onClick={decreacseQouentity} className='btn'>+</button>
                                     </label>
                               </div>
-                              <div class="card-actions justify-end">
+                              <div class="card-actions justify-end mt-10">
                                     <button onClick={orderHendeler} disabled={orderQuntity < 5} class="btn btn-primary">Confrom Order</button>
                               </div>
                         </div>

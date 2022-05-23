@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { async } from '@firebase/util';
+import useToken from '../Hook/useToken';
 
 const Register = () => {
       const { register, formState: { errors }, handleSubmit } = useForm();
@@ -27,13 +28,16 @@ const Register = () => {
            await updateProfile({displayName: data.name})
             
       };
+
+      const [token] = useToken(Cuser || Guser )
+     
       
 
       let errorMessage;
       if(Cerror || Uerror || Gerror){
             errorMessage = <p className='text-red-500'>{Cerror?.message || Uerror?.message || Gerror?.message}</p>
       }
-      if(Cuser || Guser ){
+      if(token ){
             navigate('/')
       }
 
