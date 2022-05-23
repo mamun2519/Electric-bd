@@ -8,7 +8,7 @@ const Tools = () => {
       const navigate = useNavigate()
       const [tools , setTools] = useState([])
       useEffect(()=>{
-            fetch('data.json')
+            fetch('http://localhost:5000/product')
             .then(res => res.json())
             .then(data => setTools(data))
       },[])
@@ -20,7 +20,7 @@ const Tools = () => {
                               tools.map(tool => <Service
                                     tool={tool}
                                    
-                                    navigate={ navigate}
+                                    navigate={navigate}
                               
                               >
 

@@ -6,7 +6,7 @@ const product = ({ tool , navigate}) => {
      
 
     
-      const {img , name , comment, minQuentity ,abalivaleQuentity , price} = tool
+      const {_id,img , name , comment, minQuentity ,abalivaleQuentity , price} = tool
    
      
       return (
@@ -27,7 +27,7 @@ const product = ({ tool , navigate}) => {
                               <div class="badge badge-outline">Fashion</div>
                               <div class="badge badge-outline">Products</div>
                         </div> */}
-                        <button onClick={()=> navigate('/order')} className='btn'>Order</button>
+                        <button onClick={()=> navigate(`/order/${_id}`)} className='btn'>Order</button>
                   </div>
             </div>
       );

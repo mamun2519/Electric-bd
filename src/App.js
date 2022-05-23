@@ -15,7 +15,7 @@ function App() {
       <Navber></Navber>
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
-        <Route path='/order' element={<RequreAuth>
+        <Route path='/order/:id' element={<RequreAuth>
           <Order></Order>
         </RequreAuth>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>

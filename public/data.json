@@ -2,8 +2,8 @@
       {
        "name": "Drill Machine",
        "price": 1300,
-       "minQuentity": 200,
-       "abalivaleQuentity": 50000,
+       "minQuentity": 20,
+       "abalivaleQuentity": 20000,
        "comment": "its Hot price",
        "img": "https://i.ibb.co/Nxb2gBp/bosch-hammer-drill-machine-500x500.jpg"
 
@@ -11,8 +11,8 @@
       {
        "name": "Screwdriver",
        "price": 250,
-       "minQuentity": 200,
-       "abalivaleQuentity": 50000,
+       "minQuentity": 20,
+       "abalivaleQuentity": 20000,
        "comment": "its Hot price",
        "img": " https://i.ibb.co/MRqBSYs/Scrup-Driver.png"
        
@@ -21,8 +21,8 @@
       {
        "name": "Pliers",
        "price": 123,
-       "minQuentity": 200,
-       "abalivaleQuentity": 50000,
+       "minQuentity": 20,
+       "abalivaleQuentity": 20000,
        "comment": "its Hot price",
        "img": "https://i.ibb.co/vDCJ7jm/Pleass.jpg"
 
@@ -31,8 +31,8 @@
       {
        "name": "Measuring Tape",
        "price": 90,
-       "minQuentity": 200,
-       "abalivaleQuentity": 50000,
+       "minQuentity": 20,
+       "abalivaleQuentity": 20000,
        "comment": "its Hot price",
        "img": " https://i.ibb.co/bWRBSc4/Measer-Man-Tarap.jpg"
 
@@ -41,8 +41,8 @@
       {
        "name": "Soldering Iron",
        "price": 180,
-       "minQuentity": 200,
-       "abalivaleQuentity": 50000,
+       "minQuentity": 20,
+       "abalivaleQuentity": 20000,
        "commnet": "its Hot price",
        "img": "https://i.ibb.co/Fhd3CzT/51-O95-Q6-Gd-L.jpg"
 
@@ -51,7 +51,7 @@
       {
        "name": "electric Saw",
        "price": 1700,
-       "minQuentity": 200,
+       "minQuentity": 20,
        "abalivaleQuentity": 50000,
        "comment": "its Hot price",
        "img": "https://i.ibb.co/sH3hNH9/df08cd80-3f68-4dff-89f4-d692cfc4ae5f-1-b6f41591f3f48a8b617a32e98059cd6b.jpg"
