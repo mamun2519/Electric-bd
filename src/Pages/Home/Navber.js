@@ -9,7 +9,7 @@ const Navber = () => {
             <li className=''><NavLink to='/'>Home</NavLink></li>
             <li><a>Prodect</a></li>
             <li><a>Service</a></li>
-            <li><a>DashBoard</a></li>
+            <li><NavLink to='/dashboard'>DashBoard</NavLink></li>
             <li><NavLink to='/login'>Login</NavLink></li>
             <li><button onClick={()=> signOut(auth)} className='btn'>Logout</button></li>
 
@@ -36,6 +36,12 @@ const Navber = () => {
                         <ul class="menu menu-horizontal p-0">
                             {manu}
                         </ul>
+                  </div>
+                  <div className="navber-end">
+                  {/* <label  class="btn btn-primary drawer-button lg:hidden">Open drawer</label> */}
+                  <label for="my-drawer-2" tabindex="0" class="btn btn-ghost lg:hidden">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                              </label>
                   </div>
 
             </div>

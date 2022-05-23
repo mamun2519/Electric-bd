@@ -8,6 +8,10 @@ import Register from './Pages/Login/Register';
 import Order from './Pages/Home/Order';
 import RequreAuth from './Pages/Login/RequreAuth.js'
 import { Toaster } from 'react-hot-toast';
+import Dashboard from './Pages/Dashboard/Dashboard';
+import MyOrder from './Pages/Dashboard/MyOrder';
+import addReview from './Pages/Dashboard/addReview';
+import AllUser from './Pages/Dashboard/AllUser'
 
 
 function App() {
@@ -19,6 +23,17 @@ function App() {
         <Route path='/order/:id' element={<RequreAuth>
           <Order></Order>
         </RequreAuth>}></Route>
+
+        <Route path='/dashboard' element={<RequreAuth>
+          <Dashboard></Dashboard>
+        </RequreAuth>}>
+
+          <Route path='/dashboard/myOrder' index element={<MyOrder/>}></Route>
+          <Route path='/dashboard/addReview' element={<addReview></addReview>}></Route>
+          <Route path='/dashboard/user' element={<AllUser></AllUser>}></Route>
+
+
+        </Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
       </Routes>
