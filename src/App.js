@@ -7,6 +7,7 @@ import Login from './Pages/Login/Login';
 import Register from './Pages/Login/Register';
 import Order from './Pages/Home/Order';
 import RequreAuth from './Pages/Login/RequreAuth.js'
+import { Toaster } from 'react-hot-toast';
 
 
 function App() {
@@ -21,8 +22,12 @@ function App() {
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
       </Routes>
-      
-      
+      <Toaster
+        position="top-center"
+        reverseOrder={false}
+      />
+
+
     </div>
   );
 }

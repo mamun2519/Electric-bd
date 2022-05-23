@@ -1,39 +1,98 @@
 import React, { useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import toast from 'react-hot-toast';
 import { useQuery } from 'react-query';
 import { useNavigate, useParams } from 'react-router-dom';
+import auth from '../../firebase.init';
 import Loading from '../Sheard/Loading';
 
 const Order = () => {
+      const [user] = useAuthState(auth)
       const { id } = useParams()
-      const [order , setOrder] = useState(1)
-      const { data, isLoading } = useQuery(['/prodcut', id], () => fetch(`http://localhost:5000/product/${id}`).then(res => res.json()))
+      const [orderQuntity, setOrderQuentity] = useState(1)
+      const { data, isLoading , refetch } = useQuery(['/prodcut', id], () => fetch(`http://localhost:5000/product/${id}`).then(res => res.json()))
 
 
 
       if (isLoading) {
             return <Loading></Loading>
       }
-      
+
       // quentity decrease 
-      const decreacseQouentity =() =>{
-            let quentityOrder = order + 1
-            setOrder(quentityOrder)
-            
+      const decreacseQouentity = () => {
+            let quentityOrder = orderQuntity + 1
+            setOrderQuentity(quentityOrder)
+
       }
       // quentity incrase 
-      const incarseQuentity = () =>{
+      const incarseQuentity = () => {
 
-            if(order > 1){
-             let quentityOrder = order - 1
-             setOrder(quentityOrder)
+            if (orderQuntity > 1) {
+                  let quentityOrder = orderQuntity - 1
+                  setOrderQuentity(quentityOrder)
 
             }
-           
+            else {
+                  toast.error("sorry ")
+            }
+
       }
 
-      
+      const orderHendeler = () => {
+           
+            const userName = user?.displayName
+            const email = user?.email
+            const booking = {
+                  name: userName,
+                  email: email,
+                  productName: data?.name,
+                  orderQuntity: orderQuntity,
+                  price: data?.price
+            }
+          
+            if (orderQuntity < data?.abalivaleQuentity) {
+                  const newAvailabeQuntity = parseInt(data?.abalivaleQuentity) - parseInt(orderQuntity)
+                  fetch(`http://localhost:5000/products/${id}`, {
+                        method: 'PUT',
+                        body: JSON.stringify(
+                              {newAvailabeQuntity}
+                        ),
+                        headers: {
+                              'Content-type': 'application/json',
+                        },
+                  })
+                        .then((response) => response.json())
+                        .then((json) => {
+                              refetch()
+                              // nestet api call 
+                              fetch('http://localhost:5000/booking' ,{
+                                    method: "POST",
+                                    headers: {
+                                          'Content-type': 'application/json',
+                                    },
+                                    body: JSON.stringify(booking)
 
-    
+                              })
+                              .then(res => res.json())
+                              .then(data => {
+                                    toast.success(data.message)
+                                    setOrderQuentity(1)
+                              })
+                        });
+
+            }
+            else {
+                  toast.error("sorry qunetity very big")
+
+            }
+
+
+
+      }
+
+
+
+
 
 
       return (
@@ -55,13 +114,13 @@ const Order = () => {
                                           <span class="label-text">Enter Mimimun Quentity</span>
                                     </label>
                                     <label class="input-group">
-                                         <button onClick={incarseQuentity} className='btn'>-</button>
-                                          <input type="text" value={order} class="input input-bordered" />
+                                          <button onClick={incarseQuentity} className='btn'>-</button>
+                                          <input type="text" value={orderQuntity} class="input input-bordered" />
                                           <button onClick={decreacseQouentity} className='btn'>+</button>
                                     </label>
                               </div>
                               <div class="card-actions justify-end">
-                                    <button  disabled={order < 20} class="btn btn-primary">Confrom Order</button>
+                                    <button onClick={orderHendeler} disabled={orderQuntity < 5} class="btn btn-primary">Confrom Order</button>
                               </div>
                         </div>
                   </div>
