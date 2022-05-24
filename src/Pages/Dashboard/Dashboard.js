@@ -25,7 +25,7 @@ const Dashboard = () => {
                              
                                   
                                           <li className='text-black'>
-                                                <NavLink to='user'>All User</NavLink></li>
+                                                <NavLink to='user'>Make Admin</NavLink></li>
                                         
 
 
