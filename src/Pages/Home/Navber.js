@@ -7,9 +7,9 @@ const Navber = () => {
      
       const manu = <>
             <li className=''><NavLink to='/'>Home</NavLink></li>
-            <li><a>Prodect</a></li>
-            <li><a>Service</a></li>
-            <li><NavLink to='/dashboard'>DashBoard</NavLink></li>
+            {/* <li><a>Prodect</a></li>
+            <li><a>Service</a></li> */}
+            <li><NavLink to='/dashboard'>Dashboard</NavLink></li>
             <li><NavLink to='/login'>Login</NavLink></li>
             <li><button onClick={()=> signOut(auth)} className='btn'>Logout</button></li>
 
