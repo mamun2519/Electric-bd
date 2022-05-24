@@ -1,4 +1,5 @@
 import { signOut } from 'firebase/auth';
+
 import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
@@ -143,14 +144,14 @@ const Order = () => {
                   })
                         .then((response) => response.json())
                         .then(data =>  {
-                              console.log(data);
+                             
                               refetch()
                         })
 
             }
 
 
-            console.log(data);
+            
             fetch('http://localhost:5000/booking', {
                   method: "POST",
                   headers: {
@@ -178,9 +179,14 @@ const Order = () => {
                   })
                   .then(data => {
                         console.log(data);
+                        // reset()
                         toast.success(data.message)
+                      
+                        
 
                   })
+
+                  
 
 
 
@@ -357,6 +363,7 @@ const Order = () => {
                                                             }
 
                                                       })}
+                                                      
 
 
                                                       type="number" placeholder="Enter Name" class="input input-bordered w-full max-w-xs" />

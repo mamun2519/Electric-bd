@@ -1,9 +1,70 @@
-import React from 'react';
+
+import { signOut } from 'firebase/auth';
+import React, { useEffect, useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { useNavigate } from 'react-router-dom';
+import auth from '../../firebase.init';
+import MyOrderRow from './MyOrderRow';
 
 const MyOrder = () => {
+      const [user] = useAuthState(auth)
+      const navigate = useNavigate()
+      const [services , setService] = useState([])
+
+      useEffect(() =>{
+           fetch(`http://localhost:5000/booking/${user?.email}` ,{
+             method: "GET" ,
+             headers: {
+                  'Content-type': 'application/json',
+                        'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+            }
+           })
+           .then(res => {
+                 if(res.status === 401 || res.status === 403){
+                       signOut(auth)
+                       localStorage.removeItem('accessToken')
+                       navigate('/login')
+                 }
+                 
+            
+           return res.json()})
+           .then(data => setService(data))
+      },[services])
+     
       return (
             <div>
-                  <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem ex nemo officiis provident harum aliquam. Corporis aut repellendus omnis veritatis commodi blanditiis, perspiciatis reprehenderit temporibus, sint officiis aliquam at, asperiores tenetur ex animi impedit maxime hic. Asperiores tempore ducimus quia natus fuga nobis facere! Dicta nihil numquam vel pariatur est in eligendi excepturi repudiandae deleniti debitis culpa exercitationem veniam laudantium architecto esse eveniet, ullam accusamus delectus? Sequi minus saepe, quibusdam dolorum, illum esse aspernatur neque facilis a odio odit atque ullam in doloribus dignissimos ipsa labore nam tenetur nostrum assumenda. Repellendus, veritatis. Quas nisi, enim assumenda ducimus iusto similique error quibusdam voluptatum minima impedit quisquam commodi recusandae corporis. Voluptas et cum voluptate neque totam ducimus esse fuga facilis ipsam at. Commodi nostrum dicta ut temporibus iste, adipisci eum accusamus at? Rerum at non quos ipsam, quas, ad atque molestias quae totam excepturi aliquid dolorum sit reprehenderit voluptatem iure! Libero nulla aliquid, provident ab, iusto rerum dolor excepturi consequuntur quibusdam eius iste similique quos laborum earum pariatur accusantium est mollitia nostrum. Quibusdam possimus, eveniet deserunt quam optio non modi nemo ipsam vero corporis? Similique earum ducimus, modi veritatis quod asperiores doloremque nesciunt dolor pariatur fuga aperiam quasi voluptatum nemo voluptate voluptates in, aspernatur accusamus perspiciatis, inventore architecto optio cupiditate officia saepe. Amet quae in nam totam repellendus. Expedita, culpa? Fuga consectetur assumenda nam molestiae. Rem quaerat dolorem modi dicta repudiandae quia odit porro quidem ipsam corrupti minus sapiente necessitatibus possimus animi optio fuga dolorum, officia deleniti, illo, voluptates a ex obcaecati eligendi. Sed neque quidem totam, repellendus perferendis ad minima labore saepe nulla facere enim. Quod, quos blanditiis similique asperiores nemo molestias quae ipsam tempora dolorum error dignissimos corporis sapiente corrupti magnam. A tenetur ex adipisci, repellat iure veritatis, aspernatur quisquam voluptates optio eum quam animi, aut doloribus! Veritatis laborum quisquam voluptas, aperiam illum eius tempore facere vero hic quibusdam repellat, soluta delectus, consectetur facilis! Aliquam fugiat aliquid assumenda quasi, perspiciatis architecto quae, recusandae veniam maiores quas, magnam autem culpa distinctio sunt soluta laudantium. Excepturi, facilis nulla omnis illum facere enim nesciunt eaque explicabo ex adipisci quia. Quasi, odio? Incidunt earum, aut voluptas laudantium, debitis dolore officiis modi iste vero, porro blanditiis mollitia quisquam? Aliquid sequi, praesentium dolor perferendis hic illo delectus quisquam, atque in, dolorem explicabo ipsa nesciunt blanditiis est quasi ex eos. Itaque veniam necessitatibus, esse recusandae adipisci, sit aut tenetur vel cupiditate exercitationem harum? Sed nostrum eius adipisci.</h1>
+                  <p className='text-xl'>My Order {services?.length}</p>
+                  <div class="overflow-x-auto">
+                        <table class="table w-full">
+                            
+                              <thead>
+                                    <tr>
+                                          <th>No</th>
+                                          <th>Name</th>
+                                          <th>Product Name</th>
+                                          <th>Quentity</th>
+                                          <th>Price</th>
+                                          <th>Payment</th>
+                                          <th>Delete</th>
+                                    </tr>
+                              </thead>
+                              <tbody>
+                                    
+                                  {
+                                        services?.map((service , index)=> <MyOrderRow
+                                        key={service._id}
+                                        service={service}
+                                        
+                                        index={index}
+                                        ></MyOrderRow>)
+
+                                  }
+                                   
+                              </tbody>
+                        </table>
+                  </div>
+
+
             </div>
       );
 };
