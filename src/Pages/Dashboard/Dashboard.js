@@ -21,6 +21,7 @@ const Dashboard = () => {
                               {/* <!-- Sidebar content here --> */}
                               <li className='text-black'><NavLink to='MyOrder'>MyOrder</NavLink></li>
                               <li className='text-black'><NavLink to='addReview'>Add Review</NavLink></li>
+                              <li className='text-black'><NavLink to='updateProfile'>My Profile</NavLink></li>
                              
                                   
                                           <li className='text-black'>
