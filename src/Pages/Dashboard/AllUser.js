@@ -37,6 +37,7 @@ const AllUser = () => {
                                                key={user._id}
                                                user={user}
                                                index={index}
+                                               refetch={ refetch}
                                                >
 
                                                </UserRow>)
