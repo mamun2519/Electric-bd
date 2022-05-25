@@ -32,7 +32,16 @@ const Dashboard = () => {
                               
                               {
                                     admin && <>
+                                  
                                     <li className='text-black'>
+                                                <NavLink to='manageAllOrders'>Manage All Orders</NavLink></li>
+
+                                                <li className='text-black'>
+                                                <NavLink to='addProduct'>Add Product</NavLink></li>
+                                                <li className='text-black'>
+                                                <NavLink to='manageAllprodcts'>Manage All products</NavLink></li>
+
+                                                <li className='text-black'>
                                                 <NavLink to='user'>Make Admin</NavLink></li>
                                     
                                     

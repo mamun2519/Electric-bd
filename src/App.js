@@ -15,6 +15,10 @@ import AllUser from './Pages/Dashboard/AllUser'
 import Review from './Pages/Dashboard/Review';
 import UpdateFofile from './Pages/Dashboard/UpdateFofile';
 import RequreAdmin from './Pages/Login/RequreAdmin';
+import ManageOrder from './Pages/Dashboard/ManageOrder'
+import AddProduct from './Pages/Dashboard/AddProduct';
+import Footer from './Pages/Sheard/Footer';
+import ManageProduct from './Pages/Dashboard/ManageProduct';
 
 
 
@@ -38,12 +42,22 @@ function App() {
           <Route path='/dashboard/user' element={<RequreAdmin>
             <AllUser></AllUser>
           </RequreAdmin>}></Route>
+          <Route path='/dashboard/manageAllOrders' element={<RequreAdmin>
+           <ManageOrder></ManageOrder>
+          </RequreAdmin>}></Route>
+          <Route path='/dashboard/addProduct' element={<RequreAdmin>
+           <AddProduct></AddProduct>
+          </RequreAdmin>}></Route>
+          <Route path='/dashboard/manageAllprodcts' element={<RequreAdmin>
+           <ManageProduct></ManageProduct>
+          </RequreAdmin>}></Route>
 
 
         </Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
       </Routes>
+     
       <Toaster
         position="top-center"
         reverseOrder={false}

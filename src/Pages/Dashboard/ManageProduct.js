@@ -1,52 +1,53 @@
-import { signOut } from 'firebase/auth';
 import React from 'react';
 import { useQuery } from 'react-query';
-import { useNavigate } from 'react-router-dom';
-import auth from '../../firebase.init';
 import Loading from '../Sheard/Loading';
-import UserRow from './UserRow';
+import ProductRow from './ProductRow';
 
-const AllUser = () => {
-      
-      const { data: users, isLoading, refetch } = useQuery('users', () => fetch('http://localhost:5000/user', {
+const ManageProduct = () => {
+      const { data: product, isLoading, refetch } = useQuery('manageProduct', () => fetch('http://localhost:5000/manageProduct', {
             method: 'GET',
             headers: {
                   "authorization": `Bearer ${localStorage.getItem('accessToken')}`
             }
       }).then(res => res.json()));
+
       if (isLoading) {
             return <Loading></Loading>
       }
       return (
             <div>
-                  <p>Our Total user {users?.length}</p>
+                  <p>Our Manage All Product {product?.length}</p>
 
                   <div>
+
                         <div class="overflow-x-auto">
                               <table class="table w-full">
-                                    
+                                  
                                     <thead>
                                           <tr>
                                                 <th>No</th>
-                                                <th>Email</th>
-                                                <th>Make Admin</th>
-                                                <th>Remove User</th>
+                                                <th>Name</th>
+                                                <th>Avalible Quentity</th>
+                                                <th>Minimin Quentity</th>
+                                                <th>Amount</th>
+                                                <th>Action</th>
                                           </tr>
                                     </thead>
                                     <tbody>
                                         
                                          {
-                                               users?.map((user , index) => <UserRow
-                                               
-                                               key={user._id}
-                                               user={user}
+                                               product.map((pro , index ) => <ProductRow
+                                               key={pro._id}
+                                               product={pro}
+                                               refetch={refetch}
                                                index={index}
-                                               refetch={ refetch}
+                                               
                                                >
 
-                                               </UserRow>)
+
+                                               </ProductRow>)
                                          }
-                                      
+                                        
                                     </tbody>
                               </table>
                         </div>
@@ -55,4 +56,4 @@ const AllUser = () => {
       );
 };
 
-export default AllUser;
+export default ManageProduct;

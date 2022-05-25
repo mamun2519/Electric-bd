@@ -12,12 +12,16 @@ const Tools = () => {
             .then(res => res.json())
             .then(data => setTools(data))
       },[])
+      const product = tools.slice(0 , 9)
+      const newProduct = product.reverse()
       return (
             <div>
                   <h1 className='text-4xl text-black mb-5'>Our Tols</h1>
                   <div className=' grid grid-cols-1 lg:grid-cols-3 gap-10'>
                         {
-                              tools.map(tool => <Service
+                             newProduct.map(tool => 
+                             
+                             <Service
                                     tool={tool}
                                    
                                     navigate={navigate}
