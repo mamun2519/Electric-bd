@@ -258,7 +258,7 @@ const UpdateFofile = () => {
 
                                     {/* submit */}
                                     <div className='text-center mt-4'>
-                                          <input className='btn w-full max-w-xs' type="submit" value="Confrom Order" />
+                                          <input className='btn w-full max-w-xs' type="submit" value="Update profile" />
                                     </div>
 
 

@@ -1,23 +1,23 @@
 import React from 'react';
 import toast from 'react-hot-toast';
 
-const UserRow = ({user , index ,  refetch}) => {
-      const {email , role} = user
+const UserRow = ({ user, index, refetch }) => {
+      const { _id, email, role } = user
 
       // make admin 
 
-      const AdminHendeler = () =>{
+      const AdminHendeler = () => {
             fetch(`http://localhost:5000/user/admin/${email}`, {
                   method: "PUT",
                   headers: {
                         'Content-type': 'application/json',
                         'authorization': `Bearer ${localStorage.getItem('accessToken')}`
                   },
-              
+
             })
                   .then(res => {
                         if (res.status === 403) {
-                            toast.error("Make An Feild Admin")
+                              toast.error("Make An Feild Admin")
                         }
 
 
@@ -25,31 +25,47 @@ const UserRow = ({user , index ,  refetch}) => {
                   })
                   .then(data => {
                         console.log(data);
-                        if(data.modifiedCount > 0){
+                        if (data.modifiedCount > 0) {
                               refetch()
-                       
-                        toast.success("Make Admin Successfull!")
 
-                        }})
+                              toast.success("Make Admin Successfull!")
+
+                        }
+                  })
       }
 
+      // delete user 
+      // const deleteUserHendeler = () =>{
+      //       fetch(`http://localhost:5000/user/:${_id}` , {
+      //             method: "DELETE",
+      //             headers:{
+      //                   'Content-type': 'application/json',
+      //                   'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+
+      //             }
+      //       })
+      //       .then(res => res.json())
+      //       .then(data => {
+      //         toast.success("User Delete Successfull!")
+      //       })
+      // }
 
 
       return (
-            
-                  <tr>
-                        <th>{index + 1}</th>
-                        <td>{email}</td>
-                        <td>{role !== 'admin' ? <button onClick={AdminHendeler} class="btn btn-sm">Admin</button>
+
+            <tr>
+                  <th>{index + 1}</th>
+                  <td>{email}</td>
+                  <td>{role !== 'admin' ? <button onClick={AdminHendeler} class="btn btn-sm">Admin</button>
                         :
-                      <small>Allredy Admin</small> 
-                        
+                        <small>Allredy Admin</small>
+
                   }</td>
 
-                       
-                        <td><button class="btn btn-sm">Remove</button></td>
-                  </tr>
-            
+
+                  <td><button  class="btn btn-sm">Remove</button></td>
+            </tr>
+
       );
 };
 

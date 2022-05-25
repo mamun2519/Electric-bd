@@ -14,6 +14,7 @@ import MyOrder from './Pages/Dashboard/MyOrder';
 import AllUser from './Pages/Dashboard/AllUser'
 import Review from './Pages/Dashboard/Review';
 import UpdateFofile from './Pages/Dashboard/UpdateFofile';
+import RequreAdmin from './Pages/Login/RequreAdmin';
 
 
 
@@ -34,7 +35,9 @@ function App() {
           <Route path='/dashboard/myOrder' index element={<MyOrder/>}></Route>
           <Route path='/dashboard/addReview' element={<Review></Review>}></Route>
           <Route path='/dashboard/updateProfile' element={<UpdateFofile></UpdateFofile>}></Route>
-          <Route path='/dashboard/user' element={<AllUser></AllUser>}></Route>
+          <Route path='/dashboard/user' element={<RequreAdmin>
+            <AllUser></AllUser>
+          </RequreAdmin>}></Route>
 
 
         </Route>
