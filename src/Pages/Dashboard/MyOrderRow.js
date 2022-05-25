@@ -1,11 +1,16 @@
 import React from 'react';
 import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 import OrderDeleteModal from './OrderDeleteModal';
 
 const MyOrderRow = ({ service,  index }) => {
-      const { _id, name, productName, quentity, price, email } = service
+      const navigate = useNavigate()
+      const { _id, name, productName, quentity, price, email ,paid } = service
 
       // service delete ...............
+      const payment = (id) =>{
+            navigate(`/dashboard/payment/${id}`)
+      }
 
       
 
@@ -17,8 +22,13 @@ const MyOrderRow = ({ service,  index }) => {
                         <td>{name}</td>
                         <td>{productName}</td>
                         <td>{quentity}</td>
-                        <td>{price}</td>
-                        <td><button class="btn btn-sm">Pay</button></td>
+                        <td>${price}</td>
+                        <td>
+                              {(price && !paid) && <button onClick={()=>payment(_id)} class="btn btn-sm">Pay</button>}
+                              {(price && paid) && <span>Paid</span>}
+                              
+                              </td>
+
                         <td> <label for="deleteModal" class="btn btn-sm">delete</label></td>
                         
                   </tr>

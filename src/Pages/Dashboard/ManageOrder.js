@@ -49,7 +49,7 @@ const ManageOrder = () => {
                                                 <td>${order.price}</td>
                                                 <td>Unpaid</td>
                                                 <td>Placed</td>
-                                                <td>delete</td>
+                                                <td><button class="btn btn-sm">Cancle</button></td>
                                           </tr> )
                                          }
                                           

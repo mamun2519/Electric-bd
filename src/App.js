@@ -17,8 +17,10 @@ import UpdateFofile from './Pages/Dashboard/UpdateFofile';
 import RequreAdmin from './Pages/Login/RequreAdmin';
 import ManageOrder from './Pages/Dashboard/ManageOrder'
 import AddProduct from './Pages/Dashboard/AddProduct';
-import Footer from './Pages/Sheard/Footer';
 import ManageProduct from './Pages/Dashboard/ManageProduct';
+import Payment from './Pages/Dashboard/Payment';
+
+
 
 
 
@@ -35,8 +37,10 @@ function App() {
         <Route path='/dashboard' element={<RequreAuth>
           <Dashboard></Dashboard>
         </RequreAuth>}>
+          <Route path='payment/:id' element={<Payment></Payment>}></Route>
 
-          <Route path='/dashboard/myOrder' index element={<MyOrder/>}></Route>
+          <Route path='/dashboard/myOrder' element={<MyOrder/>}></Route>
+         
           <Route path='/dashboard/addReview' element={<Review></Review>}></Route>
           <Route path='/dashboard/updateProfile' element={<UpdateFofile></UpdateFofile>}></Route>
           <Route path='/dashboard/user' element={<RequreAdmin>
