@@ -20,24 +20,7 @@ const ManageOrder = () => {
             
 
       },[orders])
-      // const { data: orders, isLoading, refetch } = useQuery('users', () => fetch('http://localhost:5000/manageOrder', {
-      //       method: 'GET',
-      //       headers: {
-      //             authorization: `Bearer ${localStorage.getItem('accessToken')}`
-      //       }
-      // }).then(res => res.json()));
-
      
-      
-    
-
-      // if (isLoading) {
-      //       return <Loading></Loading>
-
-
-      // }
-     
-      // shippedHendeler 
       const shippedHendeler = (order) => {
            
 
@@ -101,18 +84,18 @@ const ManageOrder = () => {
                                                 <th>{order.name}</th>
                                                 <td>{order.productName}</td>
                                                 <td>${order.price}</td>
-                                                <td>{order.paid ? <p className='text-red-500'>Paid</p> : <p>Pending</p>}</td>
+                                                <td>{order.paid ? <p className='text-red-500'>{order.paid}</p> : <p>unpaid</p>}</td>
 
 
 
 
                                                 <td>{
-                                                      order.shipped ? <button class="btn btn-outline btn-success btn-xs">Shipped</button> : <button onClick={()=>shippedHendeler(order)} class="btn btn-xs">Please</button>
+                                                       <button onClick={()=>shippedHendeler(order)} class="btn btn-outline btn-success btn-xs">Shipped Now</button> 
                                                       
                                                       }
 
                                                 </td>
-                                                <td><button class="btn btn-sm">Cancle</button></td>
+                                                <td><button class="btn btn-xs">Cancle</button></td>
                                           </tr> )
                                          }
                                           
