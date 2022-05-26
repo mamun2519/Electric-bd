@@ -24,12 +24,12 @@ const MyOrderRow = ({ service,  index }) => {
                         <td>{quentity}</td>
                         <td>${price}</td>
                         <td>
-                              {(price && !paid) && <button onClick={()=>payment(_id)} class="btn btn-sm">Pay</button>}
+                              {(price && !paid) && <button  onClick={()=>payment(_id)} class="btn btn-sm">Pay</button>}
                               {(price && paid) && <span>Paid</span>}
                               
                               </td>
 
-                        <td> <label for="deleteModal" class="btn btn-sm">delete</label></td>
+                        <td> <label for="deleteModal" disabled={paid}  class="btn btn-sm">delete</label></td>
                         
                   </tr>
 

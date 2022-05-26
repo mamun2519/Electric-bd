@@ -1,9 +1,13 @@
+import { Elements } from '@stripe/react-stripe-js';
+import { loadStripe } from '@stripe/stripe-js';
 import React from 'react';
 import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
 import Loading from '../Sheard/Loading';
+import CheckoutForm from './CheckoutForm';
 
 const Payment = () => {
+      const stripePromise = loadStripe('pk_test_51L1nmNCGpaTt0RU8npNSNITrjLTAUDjwjX275RD6RDk5SGoYi1H1zLKxAis8OFp4C0PxQBT2L5c0L0VsTI9ewqGl00dT2UHEXy');
       const { id } = useParams()
       const { data, isLoading } = useQuery(["payment", id], () => fetch(`http://localhost:5000/bookings/${id}`, {
             method: "GET",
@@ -26,22 +30,20 @@ const Payment = () => {
                         {/* card detils  */}
                         <div class="card w-96 bg-base-100 shadow-xl lg:mx-3">
                               <div class="card-body">
-                                    <h2 class="card-title">Card title!</h2>
-                                    <p>If a dog chews shoes whose shoes does he choose?</p>
-                                    <div class="card-actions justify-end">
-                                          <button class="btn btn-primary">Buy Now</button>
-                                    </div>
+                                    <h2 class="card-title">Hello {data.name},</h2>
+                                    <p> Pay For {data.productName}.</p>
+                                    <p>Your Order Quentity {data.quentity} Psc.</p>
+                                    <p>Please pay {data.price} Tk</p>
+
                               </div>
                         </div>
 
                         {/* card payment  */}
                         <div class="card w-96 bg-base-100 shadow-xl">
                               <div class="card-body">
-                                    <h2 class="card-title">Card title!</h2>
-                                    <p>If a dog chews shoes whose shoes does he choose?</p>
-                                    <div class="card-actions justify-end">
-                                          <button class="btn btn-primary">Buy Now</button>
-                                    </div>
+                                    <Elements stripe={stripePromise}>
+                                          <CheckoutForm data={data} />
+                                    </Elements>
                               </div>
                         </div>
 
