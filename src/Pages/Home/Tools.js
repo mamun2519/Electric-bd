@@ -15,8 +15,8 @@ const Tools = () => {
       const product = tools.slice(0 , 9)
       const newProduct = product.reverse()
       return (
-            <div>
-                  <h1 className='text-4xl text-black mb-5'>Our Tols</h1>
+            <div className='my-30'>
+                  <h1 className='text-4xl text-black'>Our Tols</h1>
                   <div className=' grid grid-cols-1 lg:grid-cols-3 gap-10'>
                         {
                              newProduct.map(tool => 

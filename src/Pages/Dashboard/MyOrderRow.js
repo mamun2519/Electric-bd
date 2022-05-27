@@ -5,7 +5,7 @@ import OrderDeleteModal from './OrderDeleteModal';
 
 const MyOrderRow = ({ service,  index }) => {
       const navigate = useNavigate()
-      const { _id, name, productName, quentity, price, email ,paid } = service
+      const { _id, name, productName, quentity, price, email ,paid , transactionId} = service
 
       // service delete ...............
       const payment = (id) =>{
@@ -19,15 +19,27 @@ const MyOrderRow = ({ service,  index }) => {
             <>
                   <tr>
                         <th>{index + 1}</th>
-                        <td>{name}</td>
+                        <td>{name}
+                        {
+                              transactionId &&   <small className='block'>Payment Transaction Id:</small>
+                        }
+                      
+                        {transactionId ?  <small className='block'>{transactionId}</small> : <small className='block text-red-500'>Please Payment</small>} 
+                       
+                        
+                        </td>
+
                         <td>{productName}</td>
                         <td>{quentity}</td>
                         <td>${price}</td>
                         <td>
                               {(price && !paid) && <button  onClick={()=>payment(_id)} class="btn btn-sm">Pay</button>}
                               {(price && paid) && <span>Paid</span>}
-                              
+                             
+                            
                               </td>
+
+                              {/* <td>{transactionId ? <p>{transactionId}</p> : <p>Please sir Payment</p>}</td> */}
 
                         <td> <label for="deleteModal" disabled={paid}  class="btn btn-sm">delete</label></td>
                         

@@ -1,12 +1,14 @@
 import { signOut } from 'firebase/auth';
-import React from 'react';
+import React, { useState } from 'react';
 import { useQuery } from 'react-query';
 import { useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import Loading from '../Sheard/Loading';
+import UserDelete from './UserDelete';
 import UserRow from './UserRow';
 
 const AllUser = () => {
+      const [deleteDoctor , setDeleteDoctor] = useState(null)
       
       const { data: users, isLoading, refetch } = useQuery('users', () => fetch('http://localhost:5000/user', {
             method: 'GET',
@@ -42,6 +44,7 @@ const AllUser = () => {
                                                user={user}
                                                index={index}
                                                refetch={ refetch}
+                                               setDeleteDoctor={setDeleteDoctor}
                                                >
 
                                                </UserRow>)
@@ -51,6 +54,17 @@ const AllUser = () => {
                               </table>
                         </div>
                   </div>
+                  {
+                        deleteDoctor && <UserDelete
+                        deleteDoctor={deleteDoctor}
+                        refetch={refetch}
+                        setDeleteDoctor={setDeleteDoctor}
+                        
+                        >
+                              
+
+                        </UserDelete>
+                  }
             </div>
       );
 };

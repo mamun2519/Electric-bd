@@ -26,6 +26,8 @@ const Payment = () => {
             <div>
                   <p>Please Payment {id}</p>
 
+                  
+
                   <div className='lg:flex justify-center'>
                         {/* card detils  */}
                         <div class="card w-96 bg-base-100 shadow-xl lg:mx-3">

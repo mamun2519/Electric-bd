@@ -7,7 +7,7 @@ import {  IoIosPeople } from 'react-icons/io';
 const BuisnessSumary = () => {
 
       return (
-            <div className=''>
+            <div className='my-40'>
                   <div className="sumarry text-center my-20">
                         <h1 className='text-4xl text-black'>MILIONS BUSINESS TRUST US</h1>
                        

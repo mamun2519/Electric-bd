@@ -5,54 +5,73 @@ import Loading from '../Sheard/Loading';
 
 
 const ManageOrder = () => {
-      const [orders , setOrders] = useState([])
-      useEffect(() =>{
-            fetch('http://localhost:5000/manageOrder' ,{
+      const [orders, setOrders] = useState([])
+      useEffect(() => {
+            fetch('http://localhost:5000/manageOrder', {
                   method: "GET",
-                  headers:{
+                  headers: {
                         'Content-type': 'application/json',
                         authorization: `Bearer ${localStorage.getItem('accessToken')}`
                   }
-            
+
             })
-            .then(res => res.json())
-            .then(data => setOrders(data))
-            
+                  .then(res => res.json())
+                  .then(data => setOrders(data))
 
-      },[orders])
-     
+
+      }, [orders])
+
       const shippedHendeler = (order) => {
-           
 
-            if(order?.paid){
-               
+
+            if (order?.paid) {
+
                   console.log('cllick');
-                  fetch(`http://localhost:5000/shipped/${order?._id}` , {
+                  fetch(`http://localhost:5000/shipped/${order?._id}`, {
                         method: "PATCH",
                         headers: {
                               'Content-type': 'application/json',
-                        'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+                              'authorization': `Bearer ${localStorage.getItem('accessToken')}`
                         }
                   })
-                  .then(res => res.json())
-                  .then(data => {
-                        
-                        toast.success('Thanks You , Product Delevery Shepped!')
-                      
-                      
-                        
-                  })
+                        .then(res => res.json())
+                        .then(data => {
+
+                              toast.success('Thanks You , Product Delevery Shepped!')
+
+
+
+                        })
 
             }
-            else{
+            else {
                   toast.error("sorry this is dont payment")
             }
-            
-           
+      }
+
+      // order delete 
+      const orderDeleteHendeler = (id) => {
+            fetch(`http://localhost:5000/booking/${id}`, {
+                  method: "DELETE",
+                  headers: {
+                        'Content-type': 'application/json',
+                        'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+                  }
+            })
+                  .then(res => res.json())
+                  .then(data => {
+
+                        toast.success('Thanks You , delete Successfull')
+
+
+
+                  })
+
 
       }
-      
-     
+
+
+
 
       return (
             <div>
@@ -62,7 +81,7 @@ const ManageOrder = () => {
 
                         <div class="overflow-x-auto">
                               <table class="table w-full">
-                                  
+
                                     <thead>
                                           <tr>
                                                 <th>No</th>
@@ -75,36 +94,58 @@ const ManageOrder = () => {
                                           </tr>
                                     </thead>
                                     <tbody>
-                                         
-
-                                         {
-                                               orders?.map((order , index) => 
-                                               <tr>
-                                                <th>{index +1}</th>
-                                                <th>{order.name}</th>
-                                                <td>{order.productName}</td>
-                                                <td>${order.price}</td>
-                                                <td>{order.paid ? <p className='text-red-500'>{order.paid}</p> : <p>unpaid</p>}</td>
 
 
+                                          {
+                                                orders?.map((order, index) =>
+                                                      <tr>
+                                                            <th>{index + 1}</th>
+                                                            <th>{order.name}</th>
+                                                            <td>{order.productName}</td>
+                                                            <td>${order.price}</td>
+                                                            <td>{order.paid ? <p className='text-red-500'>{order.paid}</p> : <p>unpaid</p>}</td>
 
 
-                                                <td>{
-                                                       <button onClick={()=>shippedHendeler(order)} class="btn btn-outline btn-success btn-xs">Shipped Now</button> 
-                                                      
-                                                      }
 
-                                                </td>
-                                                <td><button class="btn btn-xs">Cancle</button></td>
-                                          </tr> )
-                                         }
+
+                                                            <td>{
+                                                                  <button onClick={() => shippedHendeler(order)} class="btn btn-outline btn-success btn-xs">Shipped Now</button>
+
+                                                            }
+
+                                                            </td>
+                                                            <td><button onClick={() => orderDeleteHendeler(order?._id)} class="btn btn-xs">Cancle</button></td>
+                                                          
+                                                            
                                           
+                                                      </tr>)
+
+
+
+
+
+
+
+
+                                          }
+
                                         
-                                    </tbody>
-                              </table>
-                        </div>
+
+                                        
+                                   
+
+
+                              </tbody>
+                        </table>
                   </div>
             </div>
+
+                  {/* modal  */ }
+
+                 
+
+
+            </div >
       );
 };
 
