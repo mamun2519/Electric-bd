@@ -37,7 +37,7 @@ const Review = () => {
                   const review = {
                      name: data.name,
                      country: data.from,
-                     retings: data.retings,
+                     retings: parseInt(data.retings),
                      img: picture,
                      comment: data.comment
                      

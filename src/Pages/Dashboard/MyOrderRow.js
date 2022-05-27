@@ -3,7 +3,7 @@ import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 import OrderDeleteModal from './OrderDeleteModal';
 
-const MyOrderRow = ({ service,  index }) => {
+const MyOrderRow = ({ service,  index  , setDeleteOrder}) => {
       const navigate = useNavigate()
       const { _id, name, productName, quentity, price, email ,paid , transactionId} = service
 
@@ -24,7 +24,7 @@ const MyOrderRow = ({ service,  index }) => {
                               transactionId &&   <small className='block'>Payment Transaction Id:</small>
                         }
                       
-                        {transactionId ?  <small className='block'>{transactionId}</small> : <small className='block text-red-500'>Please Payment</small>} 
+                        {transactionId ?  <small className='block'>{transactionId}</small> : <small className='block text-red-500'>Sir Please Pay</small>} 
                        
                         
                         </td>
@@ -34,23 +34,24 @@ const MyOrderRow = ({ service,  index }) => {
                         <td>${price}</td>
                         <td>
                               {(price && !paid) && <button  onClick={()=>payment(_id)} class="btn btn-sm">Pay</button>}
-                              {(price && paid) && <span>Paid</span>}
+                              {(price && paid) && <span className='block'>Paid</span>}
+                              {paid === 'Shipped' && <span>Order Shipped</span>}
                              
                             
                               </td>
 
-                              {/* <td>{transactionId ? <p>{transactionId}</p> : <p>Please sir Payment</p>}</td> */}
+                             
 
-                        <td> <label for="deleteModal" disabled={paid}  class="btn btn-sm">delete</label></td>
+                        <td> <label onClick={() =>setDeleteOrder(service)} for="myOrderDelete" disabled={paid}  class="btn btn-sm">delete</label></td>
                         
                   </tr>
 
 
-                  <OrderDeleteModal
+                  {/* <OrderDeleteModal
                   service={service}
                   >
 
-                  </OrderDeleteModal>
+                  </OrderDeleteModal> */}
 
 
             </>

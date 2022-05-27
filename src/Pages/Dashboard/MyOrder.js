@@ -4,12 +4,14 @@ import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
+import MyOrderDelete from './MyOrderDelete';
 import MyOrderRow from './MyOrderRow';
 
 const MyOrder = () => {
       const [user] = useAuthState(auth)
       const navigate = useNavigate()
       const [services , setService] = useState([])
+      const [deleteOrder , setDeleteOrder] = useState(null)
 
       useEffect(() =>{
            fetch(`http://localhost:5000/booking/${user?.email}` ,{
@@ -54,6 +56,7 @@ const MyOrder = () => {
                                         services?.map((service , index)=> <MyOrderRow
                                         key={service._id}
                                         service={service}
+                                        setDeleteOrder={setDeleteOrder}
                                         
                                         index={index}
                                         ></MyOrderRow>)
@@ -63,6 +66,16 @@ const MyOrder = () => {
                               </tbody>
                         </table>
                   </div>
+
+                  {
+                        deleteOrder && <MyOrderDelete
+                        deleteOrder={deleteOrder}
+                        setDeleteOrder={setDeleteOrder}
+                        
+                        >
+
+                        </MyOrderDelete>
+                  }
 
 
             </div>

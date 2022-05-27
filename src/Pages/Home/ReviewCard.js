@@ -19,11 +19,58 @@ const ReviewCard = ({ review }) => {
 
                                     </div>
                               </div>
-                              <p>Retings: {retings}</p>
+                              <p>Retings: {retings === 5 &&  <div class="rating rating-xs">
+                                          <input type="radio" name="rating-5" class="mask mask-star-2 bg-orange-400" />
+                                          <input type="radio" name="rating-5" class="mask mask-star-2 bg-orange-400" />
+                                          <input type="radio" name="rating-5" class="mask mask-star-2 bg-orange-400" />
+                                          <input type="radio" name="rating-5" class="mask mask-star-2 bg-orange-400" />
+                                          <input type="radio" name="rating-5" class="mask mask-star-2 bg-orange-400" />
+                                    </div>}
+
+                                    {
+                                          retings === 4 &&  <div class="rating rating-xs">
+                                          <input type="radio" name="rating-5" class="mask mask-star-2 bg-orange-400" />
+                                          <input type="radio" name="rating-5" class="mask mask-star-2 bg-orange-400" />
+                                          <input type="radio" name="rating-5" class="mask mask-star-2 bg-orange-400" />
+                                          <input type="radio" name="rating-5" class="mask mask-star-2 bg-orange-400" />
+                                          
+                                    </div>
+                                    }
+                                    {
+                                          retings === 3 &&  <div class="rating rating-xs">
+                                          <input type="radio" name="rating-5" class="mask mask-star-2 bg-orange-400" />
+                                          <input type="radio" name="rating-5" class="mask mask-star-2 bg-orange-400"/>
+                                          <input type="radio" name="rating-5" class="mask mask-star-2 bg-orange-400" />
+                                          
+                                          
+                                    </div>
+                                    }
+                                    {
+                                          retings === 2 &&  <div class="rating rating-xs">
+                                          <input type="radio" name="rating-5" class="mask mask-star-2 bg-orange-400" />
+                                          <input type="radio" name="rating-5" class="mask mask-star-2 bg-orange-400"/>
+                                         
+                                          
+                                          
+                                    </div>
+                                    }
+                                    {
+                                          retings === 1 &&  <div class="rating rating-xs">
+                                          <input type="radio" name="rating-5" class="mask mask-star-2 bg-orange-400" />
+                                          
+                                         
+                                          
+                                          
+                                    </div>
+                                    }
+
+                                    
+                                   
+                              </p>
                               <p>{comment}</p>
                               <div className='flex'>
-                              <span className='mt-1'><AiOutlineLike/> </span>
-                              <span className='mx-1'>0</span>
+                                    <span className='mt-1'><AiOutlineLike /> </span>
+                                    <span className='mx-1'>0</span>
                               </div>
                         </div>
                   </div>
