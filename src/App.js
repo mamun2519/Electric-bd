@@ -19,6 +19,8 @@ import ManageOrder from './Pages/Dashboard/ManageOrder'
 import AddProduct from './Pages/Dashboard/AddProduct';
 import ManageProduct from './Pages/Dashboard/ManageProduct';
 import Payment from './Pages/Dashboard/Payment';
+import MyPortfolio from './Pages/MyPortfolio/MyPortfolio';
+
 
 
 
@@ -58,6 +60,7 @@ function App() {
 
 
         </Route>
+        <Route path='/myProtfolio' element={<MyPortfolio></MyPortfolio>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
       </Routes>
