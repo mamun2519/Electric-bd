@@ -1,6 +1,7 @@
 import React from 'react';
 
-const ProductRow = ({index, product}) => {
+const ProductRow = ({index, product , setProductDelete}) => {
+      
       const {name , price , minQuentity , abalivaleQuentity} = product
       
       return (
@@ -10,7 +11,7 @@ const ProductRow = ({index, product}) => {
             <td>{abalivaleQuentity}</td>
             <td>{minQuentity}</td>
             <td>{price}</td>
-            <td>delete</td>
+            <td><label onClick={()=> setProductDelete(product)} for="productDelete" class="btn btn-sm">Remove</label></td>
       </tr>
       );
 };

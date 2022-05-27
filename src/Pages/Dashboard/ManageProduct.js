@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useQuery } from 'react-query';
 import Loading from '../Sheard/Loading';
+import ProductDelete from './ProductDelete';
 import ProductRow from './ProductRow';
 
 const ManageProduct = () => {
+      const [productDelete , setProductDelete] = useState(null)
       const { data: product, isLoading, refetch } = useQuery('manageProduct', () => fetch('http://localhost:5000/manageProduct', {
             method: 'GET',
             headers: {
@@ -36,11 +38,12 @@ const ManageProduct = () => {
                                     <tbody>
                                         
                                          {
-                                               product.map((pro , index ) => <ProductRow
+                                               product?.map((pro , index ) => <ProductRow
                                                key={pro._id}
                                                product={pro}
                                                refetch={refetch}
                                                index={index}
+                                               setProductDelete={setProductDelete}
                                                
                                                >
 
@@ -51,6 +54,16 @@ const ManageProduct = () => {
                                     </tbody>
                               </table>
                         </div>
+                        {
+                              productDelete && <ProductDelete
+                              productDelete={productDelete}
+                              setProductDelete={setProductDelete}
+                              refetch={refetch}
+                              
+                              >
+
+                              </ProductDelete>
+                        }
                   </div>
             </div>
       );
