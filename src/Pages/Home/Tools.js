@@ -8,7 +8,7 @@ const Tools = () => {
       const navigate = useNavigate()
       const [tools , setTools] = useState([])
       useEffect(()=>{
-            fetch('http://localhost:5000/product')
+            fetch('https://vast-refuge-05190.herokuapp.com/product')
             .then(res => res.json())
             .then(data => setTools(data))
       },[])

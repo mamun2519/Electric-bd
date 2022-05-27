@@ -6,7 +6,7 @@ const OrderDeleteModal = ({service}) => {
 
       const deleteHundeler = () => {
            
-            fetch(`http://localhost:5000/booking/${_id}`, {
+            fetch(`https://vast-refuge-05190.herokuapp.com/booking/${_id}`, {
                   method: "DELETE"
             })
                   .then(res => res.json())

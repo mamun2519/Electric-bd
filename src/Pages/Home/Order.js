@@ -16,7 +16,7 @@ const Order = () => {
       const [orderQuntity, setOrderQuentity] = useState(5)
       const navigate = useNavigate()
 
-      const { data: service, isLoading, refetch } = useQuery(['/prodcut', id], () => fetch(`http://localhost:5000/product/${id}`).then(res => res.json()))
+      const { data: service, isLoading, refetch } = useQuery(['/prodcut', id], () => fetch(`https://vast-refuge-05190.herokuapp.com/product/${id}`).then(res => res.json()))
 
 
 
@@ -57,7 +57,7 @@ const Order = () => {
 
       //       if (orderQuntity < data?.abalivaleQuentity) {
       //             const newAvailabeQuntity = parseInt(data?.abalivaleQuentity) - parseInt(orderQuntity)
-      //             fetch(`http://localhost:5000/products/${id}`, {
+      //             fetch(`https://vast-refuge-05190.herokuapp.com/products/${id}`, {
       //                   method: 'PUT',
       //                   body: JSON.stringify(
       //                         { newAvailabeQuntity }
@@ -70,7 +70,7 @@ const Order = () => {
       //                   .then((json) => {
       //                         refetch()
       //                         // nestet api call 
-      //                         fetch('http://localhost:5000/booking', {
+      //                         fetch('https://vast-refuge-05190.herokuapp.com/booking', {
       //                               method: "POST",
       //                               headers: {
       //                                     'Content-type': 'application/json',
@@ -133,7 +133,7 @@ const Order = () => {
 
             else if (data.quentity < service?.abalivaleQuentity) {
                   const newAvailabeQuntity = parseInt(service?.abalivaleQuentity) - parseInt(data.quentity)
-                  fetch(`http://localhost:5000/products/${id}`, {
+                  fetch(`https://vast-refuge-05190.herokuapp.com/products/${id}`, {
                         method: 'PUT',
                         body: JSON.stringify(
                               { newAvailabeQuntity }
@@ -152,7 +152,7 @@ const Order = () => {
 
 
             
-            fetch('http://localhost:5000/booking', {
+            fetch('https://vast-refuge-05190.herokuapp.com/booking', {
                   method: "POST",
                   headers: {
                         'Content-type': 'application/json',

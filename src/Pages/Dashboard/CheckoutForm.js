@@ -13,7 +13,7 @@ const CheckoutForm = ({ data }) => {
       const { price, productName, email, name, _id } = data
       console.log(data);
       useEffect(() => {
-            fetch('http://localhost:5000/create-payment-intent', {
+            fetch('https://vast-refuge-05190.herokuapp.com/create-payment-intent', {
                   method: "POST",
                   headers: {
                         'content-type': 'application/json',
@@ -92,7 +92,7 @@ const CheckoutForm = ({ data }) => {
                         transactionId: paymentIntent.id
                   }
 
-                  fetch(`http://localhost:5000/booking/${_id}`, {
+                  fetch(`https://vast-refuge-05190.herokuapp.com/booking/${_id}`, {
                         method: 'PATCH',
                         headers: {
                               'content-type': 'application/json',
@@ -135,11 +135,11 @@ const CheckoutForm = ({ data }) => {
                                     },
                               }}
                         />
-                        
+
                         <div class="card-actions justify-end">
-                        <button className='btn mt-14' type="submit" disabled={!stripe || !clientSecret}>
-                              Pay
-                        </button>
+                              <button className='btn mt-14' type="submit" disabled={!stripe || !clientSecret}>
+                                    Pay
+                              </button>
                         </div>
                   </form>
                   {

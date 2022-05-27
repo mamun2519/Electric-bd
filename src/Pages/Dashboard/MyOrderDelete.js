@@ -5,7 +5,7 @@ const MyOrderDelete = ({deleteOrder , setDeleteOrder}) => {
       const {_id , name , productName} = deleteOrder
 
       const deleteOrderHendeler = () =>{
-            fetch(`http://localhost:5000/booking/${_id}` , {
+            fetch(`https://vast-refuge-05190.herokuapp.com/booking/${_id}` , {
                   method: "DELETE",
                   headers:{
                         'Content-type': 'application/json',

@@ -8,9 +8,9 @@ import UserDelete from './UserDelete';
 import UserRow from './UserRow';
 
 const AllUser = () => {
-      const [deleteDoctor , setDeleteDoctor] = useState(null)
-      
-      const { data: users, isLoading, refetch } = useQuery('users', () => fetch('http://localhost:5000/user', {
+      const [deleteDoctor, setDeleteDoctor] = useState(null)
+
+      const { data: users, isLoading, refetch } = useQuery('users', () => fetch('https://vast-refuge-05190.herokuapp.com/user', {
             method: 'GET',
             headers: {
                   "authorization": `Bearer ${localStorage.getItem('accessToken')}`
@@ -26,7 +26,7 @@ const AllUser = () => {
                   <div>
                         <div class="overflow-x-auto">
                               <table class="table w-full">
-                                    
+
                                     <thead>
                                           <tr>
                                                 <th>No</th>
@@ -36,32 +36,32 @@ const AllUser = () => {
                                           </tr>
                                     </thead>
                                     <tbody>
-                                        
-                                         {
-                                               users?.map((user , index) => <UserRow
-                                               
-                                               key={user._id}
-                                               user={user}
-                                               index={index}
-                                               refetch={ refetch}
-                                               setDeleteDoctor={setDeleteDoctor}
-                                               >
 
-                                               </UserRow>)
-                                         }
-                                      
+                                          {
+                                                users?.map((user, index) => <UserRow
+
+                                                      key={user._id}
+                                                      user={user}
+                                                      index={index}
+                                                      refetch={refetch}
+                                                      setDeleteDoctor={setDeleteDoctor}
+                                                >
+
+                                                </UserRow>)
+                                          }
+
                                     </tbody>
                               </table>
                         </div>
                   </div>
                   {
                         deleteDoctor && <UserDelete
-                        deleteDoctor={deleteDoctor}
-                        refetch={refetch}
-                        setDeleteDoctor={setDeleteDoctor}
-                        
+                              deleteDoctor={deleteDoctor}
+                              refetch={refetch}
+                              setDeleteDoctor={setDeleteDoctor}
+
                         >
-                              
+
 
                         </UserDelete>
                   }

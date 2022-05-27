@@ -21,7 +21,7 @@ const UpdateFofile = () => {
                   education: data.education
 
             }
-            fetch('http://localhost:5000/profile', {
+            fetch('https://vast-refuge-05190.herokuapp.com/profile', {
                   method: "POST",
                   headers: {
                         'Content-type': 'application/json',

@@ -7,7 +7,7 @@ import Loading from '../Sheard/Loading';
 const ManageOrder = () => {
       const [orders, setOrders] = useState([])
       useEffect(() => {
-            fetch('http://localhost:5000/manageOrder', {
+            fetch('https://vast-refuge-05190.herokuapp.com/manageOrder', {
                   method: "GET",
                   headers: {
                         'Content-type': 'application/json',
@@ -27,7 +27,7 @@ const ManageOrder = () => {
             if (order?.paid) {
 
                   console.log('cllick');
-                  fetch(`http://localhost:5000/shipped/${order?._id}`, {
+                  fetch(`https://vast-refuge-05190.herokuapp.com/shipped/${order?._id}`, {
                         method: "PATCH",
                         headers: {
                               'Content-type': 'application/json',
@@ -51,7 +51,7 @@ const ManageOrder = () => {
 
       // order delete 
       const orderDeleteHendeler = (id) => {
-            fetch(`http://localhost:5000/booking/${id}`, {
+            fetch(`https://vast-refuge-05190.herokuapp.com/booking/${id}`, {
                   method: "DELETE",
                   headers: {
                         'Content-type': 'application/json',

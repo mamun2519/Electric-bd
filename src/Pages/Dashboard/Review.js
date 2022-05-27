@@ -42,7 +42,7 @@ const Review = () => {
                      comment: data.comment
                      
                   }
-                  fetch('http://localhost:5000/review' , {
+                  fetch('https://vast-refuge-05190.herokuapp.com/review' , {
                         method: "POSt",
                         headers:{
                               'Content-type': 'application/json',

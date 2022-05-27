@@ -29,7 +29,7 @@ const AddProduct = () => {
                      comment: data.comment
                      
                   }
-                  fetch('http://localhost:5000/product' , {
+                  fetch('https://vast-refuge-05190.herokuapp.com/product' , {
                         method: "POST",
                         headers:{
                               'Content-type': 'application/json',

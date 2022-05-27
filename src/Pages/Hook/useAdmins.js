@@ -9,7 +9,7 @@ const useAdmins = (user) =>{
       useEffect(()=>{
             const email = user?.email
             if(email){
-                  fetch(`http://localhost:5000/user/${email}`)
+                  fetch(`https://vast-refuge-05190.herokuapp.com/user/${email}`)
                   .then(res => res.json())
                   .then(data => {
                         console.log(data);
