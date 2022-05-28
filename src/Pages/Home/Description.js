@@ -1,9 +1,12 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import sings from '../../image/singnecure.png'
+import { FaArrowCircleRight } from 'react-icons/fa';
 
 const Description = () => {
+      const navigate = useNavigate()
       return (
-            <div className='grid gird-cols-1 lg:grid-cols-2 gap-5 description my-40'>
+            <div className='grid gird-cols-1 lg:grid-cols-2 gap-5 description my-40 max-w-7xl m-auto px-3'>
                   <div cls> 
                         <h1 className='text-3xl my-3 ptext'>Our Capabilities</h1>
                         <p className='text-xl my-3 prad'>Stop by today; our talented staff will be happy to help you find what you’re searching for!</p>
@@ -11,7 +14,7 @@ const Description = () => {
                        <div className='my-4'>
                        <img src={sings} alt="" />
                        </div>
-                       <button className='btn bg-blue-800 text-white border-0'>Read More</button>
+                       <button onClick={()=> navigate ('/blogs')} className='btn bg-blue-800 text-white border-0'>Read More < FaArrowCircleRight className='mx-2'></FaArrowCircleRight></button>
 
 
 
@@ -54,7 +57,7 @@ We believe in building to positively impact communities, infrastructure, the eco
                         </div>
                         <div tabindex="3" class="collapse collapse-plus border border-base-300 rounded-box bg-white">
                               <div class="collapse-title text-xl font-medium">
-                                    Why do we do it?
+                                    Why like our service?
                               </div>
                               <div class="collapse-content bg-white">
                                     <p className='pread'>We are serious about our values. And in the context of those values we can tackle your whole project in a comprehensive customer focused way or a portion thereof.

@@ -9,6 +9,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import auth from '../../firebase.init';
 import Loading from '../Sheard/Loading';
 
+
 const Order = () => {
       const { register, formState: { errors }, handleSubmit } = useForm();
       const [user] = useAuthState(auth)
@@ -137,26 +138,26 @@ const Order = () => {
       return (
           
             <div className='max-w-7xl m-auto mt-20 px-4 grid grid-cols-1 lg:grid-cols-2 gap-8'>
-                  <div class="card w-auto bg-base-100 shadow-xl">
+                  <div class="card w-auto bg-white shadow-xl">
                         <figure>
                               <img className='my-img' src={service?.img} alt="Shoes" />
                         </figure>
                         <div class="card-body pt-2">
                               <h2 class="card-title">
                                     {service.name}
-                                    <div class="badge badge-secondary">NEW</div>
+                                    <div class="badge bg-blue-100 text-black border-0">NEW</div>
                               </h2>
                               <p className='text-xl'>{service.comment}</p>
                               <p className='text-xl'>Minimun Quentity: {service.minQuentity}</p>
                               <p className='text-xl'>Avalible Quentity: {service.abalivaleQuentity}</p>
-                              <p className='text-xl'>Price: ${service.price}</p>
+                              <p className='text-xl text-red-400 font-bold'>Price: ${service.price}</p>
                         </div>
                   </div>
 
 
 
                   {/* order from  */}
-                  <div class="card w-auto bg-base-100 shadow-xl sm:px-0">
+                  <div class="card w-auto bg-white shadow-xl sm:px-0">
                         <div class="card-body ">
 
                               <form onSubmit={handleSubmit(onSubmit)}>

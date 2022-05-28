@@ -4,7 +4,7 @@
        "price": 1300,
        "minQuentity": 20,
        "abalivaleQuentity": 20000,
-       "comment": "its Hot price",
+       "comment": "drilling is a goot metal removing process",
        "img": "https://i.ibb.co/Nxb2gBp/bosch-hammer-drill-machine-500x500.jpg"
 
       },
@@ -13,17 +13,17 @@
        "price": 250,
        "minQuentity": 20,
        "abalivaleQuentity": 20000,
-       "comment": "its Hot price",
+       "comment": "A screwdriver is a tool, manual or powered, used for driving screws",
        "img": " https://i.ibb.co/MRqBSYs/Scrup-Driver.png"
        
 
       },
       {
-       "name": "Pliers",
+       "name": "Strel Pliers",
        "price": 123,
        "minQuentity": 20,
        "abalivaleQuentity": 20000,
-       "comment": "its Hot price",
+       "comment": "pliers, hand-operated tool for holding and gripping small articles or for bending and cutting wire.",
        "img": "https://i.ibb.co/vDCJ7jm/Pleass.jpg"
 
 
@@ -33,7 +33,7 @@
        "price": 90,
        "minQuentity": 20,
        "abalivaleQuentity": 20000,
-       "comment": "its Hot price",
+       "comment": "A measuring tape is a flexible tool used for measuring length",
        "img": " https://i.ibb.co/bWRBSc4/Measer-Man-Tarap.jpg"
 
 
@@ -43,7 +43,7 @@
        "price": 180,
        "minQuentity": 20,
        "abalivaleQuentity": 20000,
-       "commnet": "its Hot price",
+       "commnet": "A soldering iron is composed of a heated metal tip (the bit) and an insulated handle",
        "img": "https://i.ibb.co/Fhd3CzT/51-O95-Q6-Gd-L.jpg"
 
 
@@ -53,7 +53,7 @@
        "price": 1700,
        "minQuentity": 20,
        "abalivaleQuentity": 50000,
-       "comment": "its Hot price",
+       "comment": "A worker using a power saw to cut through metal. Many power tools are driven by electricity",
        "img": "https://i.ibb.co/sH3hNH9/df08cd80-3f68-4dff-89f4-d692cfc4ae5f-1-b6f41591f3f48a8b617a32e98059cd6b.jpg"
 
 

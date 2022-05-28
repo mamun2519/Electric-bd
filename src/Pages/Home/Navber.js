@@ -4,6 +4,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { NavLink } from 'react-router-dom';
 import auth from '../../firebase.init';
 import blanckProfile from '../../image/blankProfile.webp'
+import logo from '../../image/logo-8.jpg'
 
 const Navber = () => {
       const [user] = useAuthState(auth)
@@ -63,7 +64,8 @@ const Navber = () => {
                         </div>
 
 
-                        <a class="btn btn-ghost normal-case text-xl">Manufacturer</a>
+                        <a class="btn btn-ghost normal-case text-xl">
+                              <img className='bannerlogo' src={logo} alt="" /> ELECTRIC BD</a>
                   </div>
                   <div class="navbar-center hidden lg:flex">
                         <ul class="menu menu-horizontal p-0">

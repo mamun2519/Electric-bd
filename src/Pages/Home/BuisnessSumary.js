@@ -1,13 +1,15 @@
 import React from 'react';
 import CountUp from 'react-countup';
 import { BsFillFlagFill } from 'react-icons/bs';
-import { GoProject } from 'react-icons/go';
+import { AiFillCustomerService } from 'react-icons/ai';
+import { SiBitcoincash } from 'react-icons/si';
 import {  IoIosPeople } from 'react-icons/io';
+import { MdProductionQuantityLimits } from 'react-icons/md';
 
 const BuisnessSumary = () => {
 
       return (
-            <div className='my-40'>
+            <div className='my-40 max-w-7xl m-auto px-3'>
                   <div className="sumarry text-center my-20">
                         <h1 className='text-4xl ptext'>MILIONS BUSINESS TRUST US</h1>
                        
@@ -18,7 +20,7 @@ const BuisnessSumary = () => {
                               <div class="card-body text-center">
                                     <div className=''>
                                           <div className=' inline-block'>
-                                          <small className=' text-5xl'>< BsFillFlagFill className='' /></small>
+                                          <small className=' text-5xl'>< AiFillCustomerService className='text-blue-800' /></small>
                                           </div>
 
                                           <p className='text-4xl my-3 font-bold'>
@@ -31,7 +33,7 @@ const BuisnessSumary = () => {
                         <div class="card shadow-xl bg-white">
                               <div class="card-body">
                                     <div className='text-center'>
-                                          <small className='text-center inline-block text-5xl'>< GoProject className='' /></small>
+                                          <small className='text-center inline-block text-5xl'>< SiBitcoincash className='text-red-400' /></small>
 
                                           <p className='text-4xl my-3 font-bold'>
                                                 <CountUp delay={2} start={0} end={120} />M
@@ -43,7 +45,7 @@ const BuisnessSumary = () => {
                         <div class="card  shadow-xl bg-white">
                               <div class="card-body">
                                     <div className='text-center'>
-                                          <small className='text-center text-5xl inline-block'>< IoIosPeople className='' /></small>
+                                          <small className='text-center text-5xl inline-block'>< IoIosPeople className='text-blue-800' /></small>
 
                                           <p className='text-4xl my-3 font-bold'>
                                                 <CountUp delay={5} start={0} end={33} />K
@@ -55,7 +57,7 @@ const BuisnessSumary = () => {
                         <div class="card shadow-xl bg-white">
                               <div class="card-body">
                                     <div className='text-center'>
-                                          <small className='text-center text-5xl inline-block'>< BsFillFlagFill className='' /></small>
+                                          <small className='text-center text-5xl inline-block'>< MdProductionQuantityLimits className='text-red-400' /></small>
 
                                           <p className='text-4xl my-3 font-bold'>
                                                 <CountUp delay={5} start={0} end={123} />

@@ -43,7 +43,11 @@ const Shkill = () => {
                         <div class="card w-auto bg-base-100 shadow-xl">
                         <p className='text-xl mx-2'>My Warking Project</p>
                               <div class="card-body">
-                                 
+                                 <a href="https://to-do-app-254ba.web.app" target={'_blank'}>To Do App</a>
+
+                                 <a href="https://walton-warehouse.web.app" target={'_blank'}>Walton WareHouse</a>
+
+                                 <a href="https://gym-center-d1db7.web.app" target={'_blank'}>Gym Center</a>
                                     
                               </div>
                         </div>

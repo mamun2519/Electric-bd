@@ -10,7 +10,7 @@ import Tools from './Tools';
 
 const Home = () => {
       return (
-            <div className='max-w-7xl m-auto px-3'>
+            <div className=''>
                   <Bannner></Bannner>
                   <Tools></Tools>
                   

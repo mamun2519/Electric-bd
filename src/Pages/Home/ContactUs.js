@@ -2,7 +2,7 @@ import React from 'react';
 
 const ContactUs = () => {
       return (
-            <div className='my-30'>
+            <div className='my-30 max-w-7xl m-auto px-3'>
                   <h1 className='text-4xl my-6 text-center ptext'>Contact Us</h1>
                   <div className='grid grid-cols-1  lg:grid-cols-2 gap-20'>
 
