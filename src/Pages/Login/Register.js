@@ -5,6 +5,7 @@ import auth from '../../firebase.init';
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { async } from '@firebase/util';
 import useToken from '../Hook/useToken';
+import { FcGoogle } from 'react-icons/fc';
 
 const Register = () => {
       const { register, formState: { errors }, handleSubmit } = useForm();
@@ -131,7 +132,7 @@ const Register = () => {
                                     <div class="flex flex-col w-full border-opacity-50">
 
                                           <div class="divider">OR</div>
-                                          <button onClick={()=> signInWithGoogle()} class="btn btn-outline">google</button>
+                                          <button onClick={()=> signInWithGoogle()} class="btn btn-outline"><span className='text-xl mx-2'><FcGoogle></FcGoogle></span> google</button>
                                     </div>
                               </div>
                         </div>

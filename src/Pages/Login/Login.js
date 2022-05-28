@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import { useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import useToken from '../Hook/useToken';
-
+import { FcGoogle } from 'react-icons/fc';
 const Login = () => {
       const location = useLocation()
       let from = location.state?.from?.pathname || "/";
@@ -110,7 +110,7 @@ const Login = () => {
                                     <div class="flex flex-col w-full border-opacity-50">
 
                                           <div class="divider ptext">OR</div>
-                                          <button onClick={()=> signInWithGoogle()} class="btn btn-outline ptext ">google</button>
+                                          <button onClick={()=> signInWithGoogle()} class="btn btn-outline ptext "><span className='text-xl mx-2'><FcGoogle></FcGoogle></span> Google</button>
                                     </div>
                               </div>
                         </div>
