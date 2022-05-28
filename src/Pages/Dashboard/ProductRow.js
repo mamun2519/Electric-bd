@@ -11,7 +11,7 @@ const ProductRow = ({index, product , setProductDelete}) => {
             <td>{abalivaleQuentity}</td>
             <td>{minQuentity}</td>
             <td>{price}</td>
-            <td><label onClick={()=> setProductDelete(product)} for="productDelete" class="btn btn-sm">Remove</label></td>
+            <td><label onClick={()=> setProductDelete(product)} for="productDelete" class="btn btn-sm bg-red-500 text-white border-0">Remove</label></td>
       </tr>
       );
 };

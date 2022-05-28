@@ -11,8 +11,8 @@ const Protbannner = () => {
                         <p className='text-2xl ptext'>i am a Web Developer From Bangladesh</p>
 
                         <div className='mt-5'>
-                              <button className='btn mr-4'>Resume</button>
-                              <button className='btn mr-4'>Contact</button>
+                              <button className='btn mr-4 bg-blue-800 text-white border-0'>Resume</button>
+                              <button className='btn mr-4 bg-blue-800 text-white border-0'>Contact</button>
                         </div>
                   </div>
                   <div className=''>

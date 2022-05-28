@@ -97,12 +97,12 @@ const Login = () => {
                                           
 
                                           {/* submit */}
-                                          <input className='btn w-full max-w-xs' type="submit" value="Login" />
+                                          <input className='btn w-full max-w-xs bg-blue-800 text-white border-0' type="submit" value="Login" />
                                           {errorMessage}
                                           <p className='text-right mb-3 text-blue-600'>Forage Password</p>
                                          
                                     </form>
-                                    <p className='text-center mt-2'>Are You new? <span onClick={()=>navigate('/register')}>Please Register</span></p>
+                                    <p className='text-center mt-2'>Are You new? <span className='text-blue-600 cursor-pointer' onClick={()=>navigate('/register')}>Please Register</span></p>
                               </div>
 
                               {/* socail-section  */}
@@ -110,7 +110,7 @@ const Login = () => {
                                     <div class="flex flex-col w-full border-opacity-50">
 
                                           <div class="divider ptext">OR</div>
-                                          <button onClick={()=> signInWithGoogle()} class="btn btn-outline ptext">google</button>
+                                          <button onClick={()=> signInWithGoogle()} class="btn btn-outline ptext ">google</button>
                                     </div>
                               </div>
                         </div>

@@ -33,7 +33,7 @@ const MyOrderRow = ({ service,  index  , setDeleteOrder}) => {
                         <td>{quentity}</td>
                         <td>${price}</td>
                         <td>
-                              {(price && !paid) && <button  onClick={()=>payment(_id)} class="btn btn-sm">Pay</button>}
+                              {(price && !paid) && <button  onClick={()=>payment(_id)} class="btn btn-sm bg-blue-800 text-white border-0">Pay</button>}
                               {(price && paid) && <span className='block'>Paid</span>}
                               {paid === 'Shipped' && <span>Order Shipped</span>}
                              
@@ -42,7 +42,7 @@ const MyOrderRow = ({ service,  index  , setDeleteOrder}) => {
 
                              
 
-                        <td> <label onClick={() =>setDeleteOrder(service)} for="myOrderDelete" disabled={paid}  class="btn btn-sm">delete</label></td>
+                        <td> <label onClick={() =>setDeleteOrder(service)} for="myOrderDelete" disabled={paid}  class="btn btn-sm bg-red-500 text-white border-0">delete</label></td>
                         
                   </tr>
 

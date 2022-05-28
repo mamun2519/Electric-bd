@@ -14,6 +14,7 @@ const Navber = () => {
             {/* <li><a>Prodect</a></li>
             <li><a>Service</a></li> */}
             <li className='mx-1'>{user && <NavLink to='/dashboard'>Dashboard</NavLink>}</li>
+            <li className='mx-1'><NavLink to='/blogs'>Blogs</NavLink></li>
             <li className='mx-1'><NavLink to='/login'>Login</NavLink></li>
             {/* <li><button onClick={() => signOut(auth)} className='btn'>Logout</button></li> */}
             <div class="dropdown dropdown-start">
@@ -36,7 +37,7 @@ const Navber = () => {
                                           </NavLink>
                                     </li>
                                     <li><a>{user?.displayName}
-                                    <span class="badge">profile</span>
+                                    <span class="badge bg-blue-800 text-white border-0">profile</span>
                                     </a></li>
                                     <li><a onClick={() => signOut(auth)}>Logout</a></li>
                               </ul>

@@ -31,7 +31,7 @@ const ContactUs = () => {
 
 
                                           <div class="form-control mt-6">
-                                                <button class="btn btn-primary">Message</button>
+                                                <button class="btn bg-blue-800 text-white">Message</button>
                                           </div>
                                     </div>
                               </div>

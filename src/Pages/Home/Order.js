@@ -43,71 +43,7 @@ const Order = () => {
 
       }
 
-      // const orderHendeler = () => {
-
-      //       const userName = user?.displayName
-      //       const email = user?.email
-      //       const booking = {
-      //             name: userName,
-      //             email: email,
-      //             productName: data?.name,
-      //             orderQuntity: orderQuntity,
-      //             price: data?.price
-      //       }
-
-      //       if (orderQuntity < data?.abalivaleQuentity) {
-      //             const newAvailabeQuntity = parseInt(data?.abalivaleQuentity) - parseInt(orderQuntity)
-      //             fetch(`https://vast-refuge-05190.herokuapp.com/products/${id}`, {
-      //                   method: 'PUT',
-      //                   body: JSON.stringify(
-      //                         { newAvailabeQuntity }
-      //                   ),
-      //                   headers: {
-      //                         'Content-type': 'application/json',
-      //                   },
-      //             })
-      //                   .then((response) => response.json())
-      //                   .then((json) => {
-      //                         refetch()
-      //                         // nestet api call 
-      //                         fetch('https://vast-refuge-05190.herokuapp.com/booking', {
-      //                               method: "POST",
-      //                               headers: {
-      //                                     'Content-type': 'application/json',
-      //                                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`
-      //                               },
-      //                               body: JSON.stringify(booking)
-
-      //                         })
-      //                               .then(res => {
-      //                                     if (res.status === 401 || res.status === 403) {
-      //                                           signOut(auth)
-      //                                           localStorage.removeItem('accessToken')
-
-      //                                           navigate('/login')
-
-
-      //                                     }
-
-
-      //                                     return res.json()
-      //                               })
-      //                               .then(data => {
-      //                                     console.log(data);
-      //                                     toast.success(data.message)
-      //                                     setOrderQuentity(5)
-      //                               })
-      //                   });
-
-      //       }
-      //       else {
-      //             toast.error("sorry qunetity very big")
-
-      //       }
-
-
-
-      // }
+     
 
       const onSubmit = data => {
             const name = data.name
@@ -199,35 +135,7 @@ const Order = () => {
 
 
       return (
-            // <div className='max-w-7xl m-auto mt-20 px-4'>
-            //       <div class="card lg:card-side  shadow-xl">
-            //             <figure>
-            //                   <img className='myOrderImg' src={data?.img} alt="product" /></figure>
-            //             <div class="card-body ">
-            //                   <h2 class="card-title text-3xl">Prodcut Name: {data?.name}</h2>
-            //                   <span className='text-xl'>Decription: {data?.comment}</span>
-            //                   <span className='text-xl'>Mimimun Orded Quentity: {data?.minQuentity} Psc</span>
-            //                   <span className='text-xl'>Available Quentity: {data?.abalivaleQuentity} Psc</span>
-            //                   <span className='text-xl font-bold'>Price: ${data?.price}</span>
-
-            //                   {/* menimam quentity feild  */}
-
-            //                   <div class="form-control mt-5">
-            //                         <label class="label">
-            //                               <span class="label-text">Enter Mimimun Quentity</span>
-            //                         </label>
-            //                         <label class="input-group">
-            //                               <button onClick={incarseQuentity} className='btn'>-</button>
-            //                               <input type="text" value={orderQuntity} class="input input-bordered" />
-            //                               <button onClick={decreacseQouentity} className='btn'>+</button>
-            //                         </label>
-            //                   </div>
-            //                   <div class="card-actions justify-end mt-10">
-            //                         <button onClick={orderHendeler} disabled={orderQuntity < 5} class="btn btn-primary">Confrom Order</button>
-            //                   </div>
-            //             </div>
-            //       </div>
-            // </div>
+          
             <div className='max-w-7xl m-auto mt-20 px-4 grid grid-cols-1 lg:grid-cols-2 gap-8'>
                   <div class="card w-auto bg-base-100 shadow-xl">
                         <figure>
@@ -406,7 +314,7 @@ const Order = () => {
 
                                     {/* submit */}
                                     <div className='text-center mt-4'>
-                                          <input className='btn w-full max-w-xs' type="submit" value="Confrom Order" />
+                                          <input className='btn w-full max-w-xs bg-blue-800 text-white' type="submit" value="Confrom Order" />
                                     </div>
 
 

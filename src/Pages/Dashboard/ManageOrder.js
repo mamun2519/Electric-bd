@@ -103,7 +103,7 @@ const ManageOrder = () => {
                                                             <th>{order.name}</th>
                                                             <td>{order.productName}</td>
                                                             <td>${order.price}</td>
-                                                            <td>{order.paid ? <p className='text-red-500'>{order.paid}</p> : <p>unpaid</p>}</td>
+                                                            <td>{order.paid ? <p className='text-green-500'>{order.paid}</p> : <p>unpaid</p>}</td>
 
 
 
@@ -114,7 +114,7 @@ const ManageOrder = () => {
                                                             }
 
                                                             </td>
-                                                            <td><button onClick={() => orderDeleteHendeler(order?._id)} class="btn btn-xs">Cancle</button></td>
+                                                            <td><button onClick={() => orderDeleteHendeler(order?._id)} class="btn btn-xs bg-red-500 text-white border-0">Cancle</button></td>
                                                           
                                                             
                                           

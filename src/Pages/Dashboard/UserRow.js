@@ -43,7 +43,7 @@ const UserRow = ({ user, index, refetch , setDeleteDoctor}) => {
                <tr>
                   <th>{index + 1}</th>
                   <td>{email}</td>
-                  <td>{role !== 'admin' ? <button onClick={AdminHendeler} class="btn btn-sm">Admin</button>
+                  <td>{role !== 'admin' ? <button onClick={AdminHendeler} class="btn btn-sm bg-blue-800 text-white border-0">Admin</button>
                         :
                         <small>Allredy Admin</small>
 
@@ -51,7 +51,7 @@ const UserRow = ({ user, index, refetch , setDeleteDoctor}) => {
 
 
                   <td>
-                  <label onClick={()=> setDeleteDoctor(user)} for="userDelete" class="btn btn-sm">Remove</label>
+                  <label onClick={()=> setDeleteDoctor(user)} for="userDelete" class="btn btn-sm bg-red-500 text-white border-0">Remove</label>
                   
                   </td>
             </tr>

@@ -11,7 +11,7 @@ const Description = () => {
                        <div className='my-4'>
                        <img src={sings} alt="" />
                        </div>
-                       <button className='btn'>Read More</button>
+                       <button className='btn bg-blue-800 text-white border-0'>Read More</button>
 
 
 
@@ -52,7 +52,7 @@ const Description = () => {
 We believe in building to positively impact communities, infrastructure, the economy, opportunity and employment. We take great pride in being proactive with our approach to projects, while ensuring that the best interests of the stakeholders are represented at every stage</p>
                               </div>
                         </div>
-                        <div tabindex="2" class="collapse collapse-plus border border-base-300 bg-base-100 rounded-box bg-white">
+                        <div tabindex="3" class="collapse collapse-plus border border-base-300 rounded-box bg-white">
                               <div class="collapse-title text-xl font-medium">
                                     Why do we do it?
                               </div>

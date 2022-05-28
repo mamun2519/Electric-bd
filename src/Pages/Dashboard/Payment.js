@@ -24,24 +24,24 @@ const Payment = () => {
       console.log(data);
       return (
             <div>
-                  <p>Please Payment {id}</p>
+                  <p className='ptext text-xl my-3'>Please Payment</p>
 
                   
 
-                  <div className='lg:flex justify-center'>
+                  <div className='lg:flex justify-center mt-20'>
                         {/* card detils  */}
-                        <div class="card w-96 bg-base-100 shadow-xl lg:mx-3">
+                        <div class="card w-96 bg-white shadow-xl lg:mx-3">
                               <div class="card-body">
-                                    <h2 class="card-title">Hello {data.name},</h2>
-                                    <p> Pay For {data.productName}.</p>
-                                    <p>Your Order Quentity {data.quentity} Psc.</p>
-                                    <p>Please pay {data.price} Tk</p>
+                                    <h2 class="card-title text-2xl ptext">Hello {data.name},</h2>
+                                    <p className='text-xl pread'> Pay For {data.productName}.</p>
+                                    <p className='text-xl pread'>Your Order Quentity {data.quentity} Psc.</p>
+                                    <p className='text-xl pread'>Please pay {data.price} Tk</p>
 
                               </div>
                         </div>
 
                         {/* card payment  */}
-                        <div class="card w-96 bg-base-100 shadow-xl">
+                        <div class="card w-96 bg-white shadow-xl">
                               <div class="card-body">
                                     <Elements stripe={stripePromise}>
                                           <CheckoutForm data={data} />

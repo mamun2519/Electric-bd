@@ -21,6 +21,9 @@ import ManageProduct from './Pages/Dashboard/ManageProduct';
 import Payment from './Pages/Dashboard/Payment';
 import MyPortfolio from './Pages/MyPortfolio/MyPortfolio';
 import Footer from './Pages/Sheard/Footer';
+import AllProduct from './Pages/Dashboard/AllProduct';
+import VewReview from './Pages/Home/VewReview';
+import Blogs from './Pages/Home/Blogs';
 
 
 
@@ -62,6 +65,9 @@ function App() {
 
         </Route>
         <Route path='/myProtfolio' element={<MyPortfolio></MyPortfolio>}></Route>
+        <Route path='/allProduct' element={<AllProduct></AllProduct>}></Route>
+        <Route path='/allReview' element={<VewReview></VewReview>}></Route>
+        <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
       </Routes>

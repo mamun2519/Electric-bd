@@ -27,7 +27,7 @@ const product = ({ tool , navigate}) => {
                               <div class="badge badge-outline">Fashion</div>
                               <div class="badge badge-outline">Products</div>
                         </div> */}
-                        <button onClick={()=> navigate(`/order/${_id}`)} className='btn'>Order</button>
+                        <button onClick={()=> navigate(`/order/${_id}`)} className='btn bg-blue-800 text-white'>Order</button>
                   </div>
             </div>
       );

@@ -1,29 +1,24 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-// import Product from './Product'
-import Service from './Service'
-
-
-const Tools = () => {
+import Service from '../Home/Service'
+const AllProduct = () => {
       const navigate = useNavigate()
-      const [tools , setTools] = useState([])
+      const [ products , setProduct] = useState([])
       useEffect(()=>{
             fetch('https://vast-refuge-05190.herokuapp.com/product')
             .then(res => res.json())
-            .then(data => setTools(data))
+            .then(data => setProduct(data))
       },[])
-      const product = tools.slice(0 , 9)
-      const newProduct = product.reverse()
       return (
-            <div className='my-40'>
-                  <h1 className='text-4xl text-black mb-9 ptext'>Our Tols</h1>
+            <div className='max-w-7xl m-auto px-3 my-10'>
+                    <h1 className='text-4xl text-black mb-9 ptext'>Our All Tols</h1>
                   <div className=' grid grid-cols-1 lg:grid-cols-3 gap-10'>
                         {
-                             newProduct.map(tool => 
+                              products.map(tool => 
                              
                              <Service
                                     tool={tool}
-                                   
+                              
                                     navigate={navigate}
                               
                               >
@@ -31,12 +26,8 @@ const Tools = () => {
                               </Service>)
                         }
                   </div>
-
-                 <div className='my-4 text-right'>
-                 <button onClick={() => navigate('/allProduct')} className=' btn bg-blue-800 text-white'>Vew All Tols</button>
-                 </div>
             </div>
       );
 };
 
-export default Tools;
+export default AllProduct;

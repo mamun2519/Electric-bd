@@ -41,7 +41,7 @@ const ProductDelete = ({productDelete , setProductDelete , refetch}) => {
                                     <label for="productDelete" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
                                     <h3 class="text-lg font-bold">Are You Sure {name} Delete?</h3>
 
-                                    <button onClick={productDeleteHendeler} class="btn btn-sm">Delete</button>
+                                    <button onClick={productDeleteHendeler} class="btn btn-sm bg-red-500 text-white border-0">Delete</button>
 
 
                               </div>

@@ -119,11 +119,11 @@ const Register = () => {
                                          
 
                                           {/* submit */}
-                                          <input className='btn w-full max-w-xs' type="submit" value="Regestion" />
+                                          <input className='btn w-full max-w-xs bg-blue-800 text-white border-0' type="submit" value="Regestion" />
                                           {errorMessage}
                                          
                                     </form>
-                                    <p className='text-center mt-2'>All Ready Register? <span onClick={()=>navigate('/login')}>Please Login</span></p>
+                                    <p className='text-center mt-2'>All Ready Register? <span className='text-blue-600 cursor-pointer' onClick={()=>navigate('/login')}>Please Login</span></p>
                               </div>
 
                               {/* socail-section  */}

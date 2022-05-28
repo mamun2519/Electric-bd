@@ -137,7 +137,7 @@ const CheckoutForm = ({ data }) => {
                         />
 
                         <div class="card-actions justify-end">
-                              <button className='btn mt-14' type="submit" disabled={!stripe || !clientSecret}>
+                              <button className='btn mt-14 bg-blue-800 text-white border-0' type="submit" disabled={!stripe || !clientSecret}>
                                     Pay
                               </button>
                         </div>
@@ -147,8 +147,8 @@ const CheckoutForm = ({ data }) => {
                   }
                   {
                         success && <div>
-                              <p>{success}</p>
-                              <p>Your transaction Id: {transactionId}</p>
+                              <p className='text-xl bg-green-500'>{success}</p>
+                              <p className='text-xl bg-green-500'>Your transaction Id: {transactionId}</p>
                         </div>
                   }
             </>
