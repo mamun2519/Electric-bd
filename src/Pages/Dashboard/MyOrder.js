@@ -35,7 +35,7 @@ const MyOrder = () => {
      
       return (
             <div>
-                  <p className='text-xl'>My Order {services?.length}</p>
+                  <p className='text-xl my-2 ptext'>My Order {services?.length}</p>
                   <div class="overflow-x-auto">
                         <table class="table w-full">
                             

@@ -8,9 +8,9 @@ const AboutMe = () => {
                   <img src={myImage} alt="" />
                   </div>
                   <div>
-                        <p className='text-xl my-2'>Discover</p>
-                        <h3 className='text-3xl'>About Me</h3>
-                        <p className='my-2'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit asperiores amet explicabo, unde molestias consequuntur maiores neque. Facilis, labore. Corporis?</p>
+                        <p className='text-xl my-2 ptext'>Discover</p>
+                        <h3 className='text-3xl ptext'>About Me</h3>
+                        <p className='my-2 pread text-xl'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit asperiores amet explicabo, unde molestias consequuntur maiores neque. Facilis, labore. Corporis?</p>
 
                         <div className='border p-5'>
                               <p className='text-xl mt-2'>Name: Juboraj Islam Mamun</p>

@@ -32,7 +32,7 @@ const Shkill = () => {
                                           <li>React Query</li>
                                           <li>React Hok from</li>
                                           <li>Json Web Token</li>
-                                          <li>Strip</li>
+                                          <li>Stripe</li>
                                     </div>
                                     </div>
                                     

@@ -5,7 +5,7 @@ const ReviewCard = ({ review }) => {
       const { name, img, comment, retings, country } = review
       return (
             <div className='h-full'>
-                  <div class="card   shadow-xl mt-20">
+                  <div class="card   shadow-xl mt-20 bg-white">
                         <div class="card-body">
                               <div className='card-img flex'>
                                     <div class="avatar">
@@ -14,8 +14,8 @@ const ReviewCard = ({ review }) => {
                                           </div>
                                     </div>
                                     <div className='mx-5'>
-                                          <h3 className='text-2xl'>{name}</h3>
-                                          <p>{country}</p>
+                                          <h3 className='text-2xl ptext'>{name}</h3>
+                                          <p className='pread'>{country}</p>
 
                                     </div>
                               </div>
@@ -67,10 +67,10 @@ const ReviewCard = ({ review }) => {
                                     
                                    
                               </p>
-                              <p>{comment}</p>
+                              <p className='pread'>{comment}</p>
                               <div className='flex'>
-                                    <span className='mt-1'><AiOutlineLike /> </span>
-                                    <span className='mx-1'>0</span>
+                                    <span className='mt-1 text-blue-600 text-xl'><AiOutlineLike /> </span>
+                                    <span className='mx-1 text-xl'>0</span>
                               </div>
                         </div>
                   </div>

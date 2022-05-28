@@ -14,7 +14,7 @@ const Dashboard = () => {
                   <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
                   <div class="drawer-content mx-3">
 
-                        <h1 className='text-4xl text-accent font-bold'>Walcome to Our DashBoard</h1>
+                        <h1 className='text-4xl text-accent font-bold text-center my-4'>Walcome to Our DashBoard</h1>
 
 
                         <Outlet />
@@ -32,10 +32,10 @@ const Dashboard = () => {
                               <li className='text-black'><NavLink to='addReview'>Add Review</NavLink></li>
                                     </>
                               } */}
-                                <li className='text-black'><NavLink to='MyOrder'>My Order</NavLink></li>
-                              <li className='text-black'><NavLink to='addReview'>Add Review</NavLink></li>
+                                <li className='ptext'><NavLink to='/dashboard'>My Order</NavLink></li>
+                              <li className='ptext'><NavLink to='addReview'>Add Review</NavLink></li>
                              
-                              <li className='text-black'><NavLink to='updateProfile'>My Profile</NavLink></li>
+                              <li className='ptext'><NavLink to='updateProfile'>My Profile</NavLink></li>
                              
                               
                               {
@@ -44,12 +44,12 @@ const Dashboard = () => {
                                     <li className='text-black'>
                                                 <NavLink to='manageAllOrders'>Manage All Orders</NavLink></li>
 
-                                                <li className='text-black'>
+                                                <li className='ptext'>
                                                 <NavLink to='addProduct'>Add Product</NavLink></li>
-                                                <li className='text-black'>
+                                                <li className='ptext'>
                                                 <NavLink to='manageAllprodcts'>Manage All products</NavLink></li>
 
-                                                <li className='text-black'>
+                                                <li className='ptext'>
                                                 <NavLink to='user'>Make Admin</NavLink></li>
                                     
                                     

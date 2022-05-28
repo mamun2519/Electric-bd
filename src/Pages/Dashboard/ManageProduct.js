@@ -18,7 +18,7 @@ const ManageProduct = () => {
       }
       return (
             <div>
-                  <p>Our Manage All Product {product?.length}</p>
+                  <p className='text-xl my-3 ptext'>Our Manage All Product {product?.length}</p>
 
                   <div>
 

@@ -20,6 +20,7 @@ import AddProduct from './Pages/Dashboard/AddProduct';
 import ManageProduct from './Pages/Dashboard/ManageProduct';
 import Payment from './Pages/Dashboard/Payment';
 import MyPortfolio from './Pages/MyPortfolio/MyPortfolio';
+import Footer from './Pages/Sheard/Footer';
 
 
 
@@ -41,7 +42,7 @@ function App() {
         </RequreAuth>}>
           <Route path='payment/:id' element={<Payment></Payment>}></Route>
 
-          <Route path='/dashboard/myOrder' element={<MyOrder/>}></Route>
+          <Route  index element={<MyOrder/>}></Route>
          
           <Route path='/dashboard/addReview' element={<Review></Review>}></Route>
           <Route path='/dashboard/updateProfile' element={<UpdateFofile></UpdateFofile>}></Route>
@@ -64,11 +65,13 @@ function App() {
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
       </Routes>
+      {/* <Footer></Footer> */}
      
       <Toaster
         position="top-center"
         reverseOrder={false}
       />
+      
 
 
     </div>

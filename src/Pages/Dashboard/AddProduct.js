@@ -51,10 +51,10 @@ const AddProduct = () => {
       }
       return (
             <div>
-                  <p>Please Add a New Product</p>
+                  <p className='text-xl my-3 ptext'>Please Add a New Product</p>
 
-                  <div className='flex h-screen justify-center'>
-                        <div class="card w-96 bg-base-100 shadow-xl">
+                  <div className='flex justify-center mb-40'>
+                        <div class="card w-96 bg-white shadow-xl">
                               <div class="card-body">
                                     <form onSubmit={handleSubmit(onSubmit)}>
                                           {/* name  */}

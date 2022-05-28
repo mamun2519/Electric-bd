@@ -51,9 +51,9 @@ const UpdateFofile = () => {
             
             ;}
       return (
-            <div>
-                  <p>Do you want to Update your profile?</p>
-                  <div class="card w-auto  shadow-xl">
+            <div className=''>
+                  <p className='text-xl my-3 ptext'>Do you want to Update your profile?</p>
+                  <div class="card w-auto  shadow-xl bg-white">
                         <div class="card-body">
                               
                               <div className="lg:px-20">

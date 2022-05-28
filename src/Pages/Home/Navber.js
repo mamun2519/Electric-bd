@@ -44,7 +44,8 @@ const Navber = () => {
 
       </>
       return (
-            <div className='max-w-7xl m-auto'>
+           <div className='bg-white'>
+                  <div className='max-w-7xl m-auto '>
                   <div class="navbar text-black  sm:flex justify-between">
                   <div class="navbar-start">
                         <div class="dropdown">
@@ -80,6 +81,7 @@ const Navber = () => {
             </div>
 
             </div>
+           </div>
 
 
             

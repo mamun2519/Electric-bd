@@ -21,7 +21,7 @@ const AllUser = () => {
       }
       return (
             <div>
-                  <p>Our Total user {users?.length}</p>
+                  <p className='text-xl my-3 ptext'>Our Total user {users?.length}</p>
 
                   <div>
                         <div class="overflow-x-auto">

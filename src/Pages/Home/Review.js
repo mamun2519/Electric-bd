@@ -11,8 +11,8 @@ const Review = () => {
 
       return (
             <div className='my-20'>
-                  <p className='text-xl'>Review</p>
-                  <h1 className='text-3xl'>Our Coustomer Say!</h1>
+                  <p className='text-xl pread'>Review</p>
+                  <h1 className='text-3xl ptext'>Our Customer Say!</h1>
 
                   <div className="review grid grid-cols-1 lg:grid-cols-3 gap-5">
                         {

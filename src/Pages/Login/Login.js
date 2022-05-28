@@ -39,9 +39,9 @@ const Login = () => {
 
       return (
             <div className='flex h-screen justify-center items-center'>
-                  <div class="card w-96  shadow-xl">
+                  <div class="card w-96  shadow-xl bg-white">
                         <div class="card-body">
-                              <h2 class="card-title text-center">Login</h2>
+                              <h2 class="card-title text-center ptext">Login</h2>
 
                               <div className="register-from">
                                     <form onSubmit={handleSubmit(onSubmit)}>
@@ -99,6 +99,7 @@ const Login = () => {
                                           {/* submit */}
                                           <input className='btn w-full max-w-xs' type="submit" value="Login" />
                                           {errorMessage}
+                                          <p className='text-right mb-3 text-blue-600'>Forage Password</p>
                                          
                                     </form>
                                     <p className='text-center mt-2'>Are You new? <span onClick={()=>navigate('/register')}>Please Register</span></p>
@@ -108,8 +109,8 @@ const Login = () => {
                               <div className="socail-section">
                                     <div class="flex flex-col w-full border-opacity-50">
 
-                                          <div class="divider">OR</div>
-                                          <button onClick={()=> signInWithGoogle()} class="btn btn-outline">google</button>
+                                          <div class="divider ptext">OR</div>
+                                          <button onClick={()=> signInWithGoogle()} class="btn btn-outline ptext">google</button>
                                     </div>
                               </div>
                         </div>

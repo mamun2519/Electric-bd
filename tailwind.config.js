@@ -12,8 +12,13 @@ module.exports = {
           primary: "#37cdbe",
           secondary: "#f6d860",
           accent: "#37cdbe",
+          ptext: "#282828",
+          pread: "#444444",
           neutral: "#3d4451",
-          "base-100": "#ffffff",
+         
+        
+
+          "base-100": "#F3F4F6",
         },
       },
       // "dark",

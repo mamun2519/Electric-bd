@@ -68,12 +68,12 @@ const Review = () => {
 
       }
       return (
-            <div>
-                  <p>Hey {user?.displayName}! </p>
-                  <p>Do you want to add a review?</p>
+            <div className='mb-40'>
+                  <p className='text-xl my-2 ptext'>Hey {user?.displayName}! </p>
+                  <p className='text-xl ptext'>Do you want to add a review?</p>
 
-                  <div className='flex h-screen justify-center'>
-                        <div class="card w-96 bg-base-100 shadow-xl">
+                  <div className='flex  justify-center'>
+                        <div class="card w-96 bg-white shadow-xl">
                               <div class="card-body">
                                     <form onSubmit={handleSubmit(onSubmit)}>
                                           {/* name  */}

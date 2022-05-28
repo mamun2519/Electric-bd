@@ -10,19 +10,19 @@ const product = ({ tool , navigate}) => {
    
      
       return (
-            <div class="card   shadow-xl">
+            <div class="card   shadow-xl bg-white">
                   <figure><img className='service-img' 
 
                    src={img} alt="tools" /></figure>
                   <div class="card-body">
-                        <h2 class="card-title">
+                        <h2 class="card-title ptext">
                               {name}
                               <div class="badge badge-secondary">NEW</div>
                         </h2>
-                        <p>{comment}</p>
-                        <p>Minimun Quentity: {minQuentity}</p>
-                        <p>Avalible Quentity: {abalivaleQuentity}</p>
-                        <p>Price: ${price}</p>
+                        <p className='pread'>{comment}</p>
+                        <p className='pread'>Minimun Quentity: {minQuentity}</p>
+                        <p className='pread'>Avalible Quentity: {abalivaleQuentity}</p>
+                        <p className='text-red-500 text-xl'>Price: ${price}</p>
                         {/* <div class="card-actions justify-end">
                               <div class="badge badge-outline">Fashion</div>
                               <div class="badge badge-outline">Products</div>

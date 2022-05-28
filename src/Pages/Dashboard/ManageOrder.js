@@ -75,7 +75,7 @@ const ManageOrder = () => {
 
       return (
             <div>
-                  <p>Total manage order {orders?.length}</p>
+                  <p className='text-xl my-3 ptext'>Total manage order {orders?.length}</p>
 
                   <div>
 
