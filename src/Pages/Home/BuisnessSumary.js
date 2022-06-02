@@ -9,7 +9,11 @@ import { MdProductionQuantityLimits } from 'react-icons/md';
 const BuisnessSumary = () => {
 
       return (
-            <div className='my-40 max-w-7xl m-auto px-3'>
+            <div
+            data-aos="fade-up"
+     data-aos-duration="3000"
+            
+            className='my-40 max-w-7xl m-auto px-3'>
                   <div className="sumarry text-center my-20">
                         <h1 className='text-4xl ptext'>MILIONS BUSINESS TRUST US</h1>
                        

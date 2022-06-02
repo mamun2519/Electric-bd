@@ -7,7 +7,7 @@ import { FaArrowCircleRight } from 'react-icons/fa';
 
 const Tools = () => {
       const navigate = useNavigate()
-      const [tools , setTools] = useState([])
+      const [tools, setTools] = useState([])
       useEffect(()=>{
             fetch('https://vast-refuge-05190.herokuapp.com/product')
             .then(res => res.json())

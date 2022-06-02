@@ -4,7 +4,11 @@ import { AiOutlineLike } from 'react-icons/ai';
 const ReviewCard = ({ review }) => {
       const { name, img, comment, retings, country } = review
       return (
-            <div className='h-full'>
+            <div
+            data-aos="fade-right"
+            data-aos-duration="3000"
+            
+            className='h-full'>
                   <div class="card   shadow-xl mt-20 bg-white">
                         <div class="card-body">
                               <div className='card-img flex'>

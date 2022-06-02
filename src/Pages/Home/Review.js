@@ -5,14 +5,15 @@ import { FaArrowCircleRight } from 'react-icons/fa';
 
 const Review = () => {
       const navigate = useNavigate()
-      const [reviews , setReview] = useState([])
+      const [reviews, setReview] = useState([])
       useEffect(()=>{
             fetch('https://vast-refuge-05190.herokuapp.com/review')
             .then(res => res.json())
             .then(data => setReview(data))
       },[])
-
+    
       const newReview = reviews.slice(0 , 6)
+      // lol 
 
       return (
             <div className='my-20 max-w-7xl m-auto px-3'>

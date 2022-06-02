@@ -28,7 +28,11 @@ const Payment = () => {
 
                   
 
-                  <div className='lg:flex justify-center mt-20'>
+                  <div
+                 data-aos="zoom-in"
+                 data-aos-duration="4000"
+                  
+                  className='lg:flex justify-center mt-20'>
                         {/* card detils  */}
                         <div class="card w-96 bg-white shadow-xl lg:mx-3">
                               <div class="card-body">

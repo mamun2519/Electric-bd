@@ -11,7 +11,11 @@ const product = ({ tool , navigate}) => {
    
      
       return (
-            <div class="card   shadow-xl bg-white">
+            <div
+            data-aos="fade-right"
+            data-aos-offset="300"
+            data-aos-easing="ease-in-sine"
+             class="card   shadow-xl bg-white">
                   <figure><img className='service-img' 
 
                    src={img} alt="tools" /></figure>

@@ -8,7 +8,11 @@ import logo6 from '../../image/logo-6.jpg'
 
 const Partner = () => {
       return (
-            <div className='my-40 max-w-7xl m-auto px-3'>
+            <div
+            data-aos="zoom-in-right"
+            data-aos-duration="3000"
+            
+            className='my-40 max-w-7xl m-auto px-3'>
                   <h1 className='text-3xl my-5 ptext'>Our Best Partners</h1>
                   <div className='grid lg:grid-cols-6 grid-cols-3'>
 
