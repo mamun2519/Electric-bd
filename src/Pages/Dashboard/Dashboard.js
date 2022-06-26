@@ -6,6 +6,10 @@ import useAdmins from '../Hook/useAdmins';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { BiMessageAltCheck } from 'react-icons/bi';
 import { CgProfile } from 'react-icons/cg';
+import { AiOutlineAppstoreAdd } from 'react-icons/ai';
+import {  GrFormAdd } from 'react-icons/gr';
+import {  MdProductionQuantityLimits } from 'react-icons/md';
+import {  RiAdminLine } from 'react-icons/ri';
 
 
 const Dashboard = () => {
@@ -47,15 +51,31 @@ const Dashboard = () => {
                                     admin && <>
                                   
                                     <li className='text-black'>
-                                                <NavLink to='manageAllOrders'>Manage All Orders</NavLink></li>
+                                                <NavLink to='manageAllOrders'>
+                                                     <span className="inline-block">
+                                                      <AiOutlineAppstoreAdd/>
+                                                      </span> Manage All Orders</NavLink></li>
 
                                                 <li className='ptext'>
-                                                <NavLink to='addProduct'>Add Product</NavLink></li>
+                                                <NavLink to='addProduct'>
+                                                      <span className="inline-block">
+                                                            <GrFormAdd/>
+                                                      </span>
+                                                      
+                                                      Add Product</NavLink></li>
                                                 <li className='ptext'>
-                                                <NavLink to='manageAllprodcts'>Manage All products</NavLink></li>
+                                                <NavLink to='manageAllprodcts'>
+                                                      <span className="inline-block">
+                                                            <MdProductionQuantityLimits/>
+                                                      </span>
+                                                      Manage All products</NavLink></li>
 
                                                 <li className='ptext'>
-                                                <NavLink to='user'>Make Admin</NavLink></li>
+                                                <NavLink to='user'>
+                                                      <span className="inline-block">
+                                                            <RiAdminLine/>
+                                                      </span>
+                                                      Make Admin</NavLink></li>
                                     
                                     
                                     

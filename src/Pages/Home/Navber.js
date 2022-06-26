@@ -16,7 +16,9 @@ const Navber = () => {
             <li><a>Service</a></li> */}
             <li className='mx-1'>{user && <NavLink to='/dashboard'>Dashboard</NavLink>}</li>
             <li className='mx-1'><NavLink to='/blogs'>Blogs</NavLink></li>
-            <li className='mx-1'><NavLink to='/login'>Login</NavLink></li>
+            {
+                  !user && <li className='mx-1'><NavLink to='/login'>Login</NavLink></li>
+            }
             {/* <li><button onClick={() => signOut(auth)} className='btn'>Logout</button></li> */}
             <div class="dropdown dropdown-start">
                               
