@@ -1,0 +1,14 @@
+.animation{
+      width: 170px;
+      height: 70px;
+      border: 1px solid lawngreen
+}
+
+.animation:hover{
+    
+    animation: 5s ;
+    animation-name: inherit;
+    border: 3px;
+
+}
+

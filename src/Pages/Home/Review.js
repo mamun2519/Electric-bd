@@ -13,7 +13,7 @@ const Review = () => {
       },[])
     
       const newReview = reviews.slice(0 , 6)
-      // lol 
+      
 
       return (
             <div className='my-20 max-w-7xl m-auto px-3'>

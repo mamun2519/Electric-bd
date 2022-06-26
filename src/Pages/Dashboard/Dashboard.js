@@ -3,6 +3,9 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { NavLink, Outlet,  } from 'react-router-dom';
 import auth from '../../firebase.init';
 import useAdmins from '../Hook/useAdmins';
+import { AiOutlineShoppingCart } from 'react-icons/ai';
+import { BiMessageAltCheck } from 'react-icons/bi';
+import { CgProfile } from 'react-icons/cg';
 
 
 const Dashboard = () => {
@@ -28,13 +31,16 @@ const Dashboard = () => {
 
                               {
                                     !admin && <>
-                                     <li className='text-black'><NavLink to='MyOrder'>My Order</NavLink></li>
-                              <li className='text-black'><NavLink to='addReview'>Add Review</NavLink></li>
+                                    
+                                     <li className='text-black'><NavLink to='MyOrder'><span className='inline-block'><AiOutlineShoppingCart></AiOutlineShoppingCart></span>My Order</NavLink></li>
+                              <li className='text-black'><NavLink to='addReview'> <span className="inline-block">
+                                    <BiMessageAltCheck></BiMessageAltCheck>
+                                    </span> Add Review</NavLink></li>
                                     </>
                               }
                               
                              
-                              <li className='ptext'><NavLink to='updateProfile'>My Profile</NavLink></li>
+                              <li className='ptext'><NavLink to='updateProfile'> <span className="inline-block"><CgProfile></CgProfile></span> My Profile</NavLink></li>
                              
                               
                               {
