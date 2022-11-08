@@ -20,9 +20,11 @@ const Review = () => {
                   return
 
             }
+            console.log(data);
 
             const image = data.pic[0];
             const formData = new FormData();
+            console.log(formData);
             formData.append('image', image);
             const url = `https://api.imgbb.com/1/upload?key=${imgStoreKey}`;
             fetch(url , {
