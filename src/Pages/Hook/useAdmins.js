@@ -9,10 +9,10 @@ const useAdmins = (user) =>{
       useEffect(()=>{
             const email = user?.email
             if(email){
-                  fetch(`https://vast-refuge-05190.herokuapp.com/user/${email}`)
+                  fetch(`https://electic-bd-server-git-main-mamun2232.vercel.app/user/${email}`)
                   .then(res => res.json())
                   .then(data => {
-                        console.log(data);
+                        console.log(data)
                         setAdmin(data.admin)
                         setAdminLoading(false)
                   })

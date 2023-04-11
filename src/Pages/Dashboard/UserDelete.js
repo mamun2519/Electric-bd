@@ -6,7 +6,7 @@ const UserDelete = ({ deleteDoctor , refetch , setDeleteDoctor}) => {
    
 
       const deleteUserHendeler = () =>{
-            fetch(`https://vast-refuge-05190.herokuapp.com/user/${_id}` , {
+            fetch(`https://electic-bd-server-git-main-mamun2232.vercel.app/user/${_id}` , {
                   method: "DELETE",
                   headers:{
                         'Content-type': 'application/json',

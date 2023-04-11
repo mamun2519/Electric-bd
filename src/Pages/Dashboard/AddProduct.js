@@ -29,7 +29,7 @@ const AddProduct = () => {
                      comment: data.comment
                      
                   }
-                  fetch('https://vast-refuge-05190.herokuapp.com/product' , {
+                  fetch('https://electic-bd-server-git-main-mamun2232.vercel.app/product' , {
                         method: "POST",
                         headers:{
                               'Content-type': 'application/json',

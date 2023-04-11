@@ -11,7 +11,7 @@ const useToken = (user) => {
             const carrentUser = {email: email}
 
             if(email){
-                  fetch(`https://vast-refuge-05190.herokuapp.com/user/${email}` ,{
+                  fetch(`https://electic-bd-server-git-main-mamun2232.vercel.app/user/${email}` ,{
                         method: "PUT",
                         headers:{
                               'content-type': 'application/json'

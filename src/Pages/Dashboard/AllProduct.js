@@ -5,7 +5,7 @@ const AllProduct = () => {
       const navigate = useNavigate()
       const [products, setProduct] = useState([])
       useEffect(() => {
-            fetch('https://vast-refuge-05190.herokuapp.com/product')
+            fetch('https://electic-bd-server-git-main-mamun2232.vercel.app/product')
                   .then(res => res.json())
                   .then(data => setProduct(data))
       }, [])

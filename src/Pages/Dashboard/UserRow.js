@@ -8,7 +8,7 @@ const UserRow = ({ user, index, refetch , setDeleteDoctor}) => {
       // make admin 
 
       const AdminHendeler = () => {
-            fetch(`https://vast-refuge-05190.herokuapp.com/user/admin/${email}`, {
+            fetch(`https://electic-bd-server-git-main-mamun2232.vercel.app/user/admin/${email}`, {
                   method: "PUT",
                   headers: {
                         'Content-type': 'application/json',

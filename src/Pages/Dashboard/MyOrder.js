@@ -14,7 +14,7 @@ const MyOrder = () => {
       const [deleteOrder , setDeleteOrder] = useState(null)
 
       useEffect(() =>{
-           fetch(`https://vast-refuge-05190.herokuapp.com/booking/${user?.email}` ,{
+           fetch(`https://electic-bd-server-git-main-mamun2232.vercel.app/booking/${user?.email}` ,{
              method: "GET" ,
              headers: {
                   'Content-type': 'application/json',

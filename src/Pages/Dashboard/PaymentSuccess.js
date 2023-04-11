@@ -4,7 +4,7 @@ const PaymentSuccess = ({data , refetch}) => {
       const {_id} = data
       const [transeationId , setTransetionId] = useState([])
       useEffect(()=>{
-            fetch(`https://vast-refuge-05190.herokuapp.com/transetion/${_id}` , {
+            fetch(`https://electic-bd-server-git-main-mamun2232.vercel.app/transetion/${_id}` , {
                   method: "GET"
             })
             .then(res => res.json())

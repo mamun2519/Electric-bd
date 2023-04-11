@@ -9,7 +9,7 @@ import CheckoutForm from './CheckoutForm';
 const Payment = () => {
       const stripePromise = loadStripe('pk_test_51L1nmNCGpaTt0RU8npNSNITrjLTAUDjwjX275RD6RDk5SGoYi1H1zLKxAis8OFp4C0PxQBT2L5c0L0VsTI9ewqGl00dT2UHEXy');
       const { id } = useParams()
-      const { data, isLoading } = useQuery(["payment", id], () => fetch(`https://vast-refuge-05190.herokuapp.com/bookings/${id}`, {
+      const { data, isLoading } = useQuery(["payment", id], () => fetch(`https://electic-bd-server-git-main-mamun2232.vercel.app/bookings/${id}`, {
             method: "GET",
             headers: {
                   'Content-type': 'application/json',

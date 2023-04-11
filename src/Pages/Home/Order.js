@@ -17,7 +17,7 @@ const Order = () => {
       const [orderQuntity, setOrderQuentity] = useState(5)
       const navigate = useNavigate()
 
-      const { data: service, isLoading, refetch } = useQuery(['/prodcut', id], () => fetch(`https://vast-refuge-05190.herokuapp.com/product/${id}`).then(res => res.json()))
+      const { data: service, isLoading, refetch } = useQuery(['/prodcut', id], () => fetch(`https://electic-bd-server-git-main-mamun2232.vercel.app/product/${id}`).then(res => res.json()))
 
 
 
@@ -70,7 +70,7 @@ const Order = () => {
 
             else if (data.quentity < service?.abalivaleQuentity) {
                   const newAvailabeQuntity = parseInt(service?.abalivaleQuentity) - parseInt(data.quentity)
-                  fetch(`https://vast-refuge-05190.herokuapp.com/products/${id}`, {
+                  fetch(`https://electic-bd-server-git-main-mamun2232.vercel.app/products/${id}`, {
                         method: 'PUT',
                         body: JSON.stringify(
                               { newAvailabeQuntity }
@@ -89,7 +89,7 @@ const Order = () => {
 
 
             
-            fetch('https://vast-refuge-05190.herokuapp.com/booking', {
+            fetch('https://electic-bd-server-git-main-mamun2232.vercel.app/booking', {
                   method: "POST",
                   headers: {
                         'Content-type': 'application/json',

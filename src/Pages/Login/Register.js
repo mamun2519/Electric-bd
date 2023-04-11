@@ -31,6 +31,8 @@ const Register = () => {
       };
 
       const [token] = useToken(Cuser || Guser )
+
+      console.log(token)
      
       
 

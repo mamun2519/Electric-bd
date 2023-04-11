@@ -21,7 +21,7 @@ const UpdateFofile = () => {
                   education: data.education
 
             }
-            fetch('https://vast-refuge-05190.herokuapp.com/profile', {
+            fetch('https://electic-bd-server-git-main-mamun2232.vercel.app/profile', {
                   method: "POST",
                   headers: {
                         'Content-type': 'application/json',

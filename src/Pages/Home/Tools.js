@@ -3,18 +3,24 @@ import { useNavigate } from 'react-router-dom';
 // import Product from './Product'
 import Service from './Service'
 import { FaArrowCircleRight } from 'react-icons/fa';
+import axios from 'axios';
 
 
 const Tools = () => {
       const navigate = useNavigate()
       const [tools, setTools] = useState([])
       useEffect(()=>{
-            fetch('https://vast-refuge-05190.herokuapp.com/product')
-            .then(res => res.json())
-            .then(data => setTools(data))
+            fetch('https://electic-bd-server-git-main-mamun2232.vercel.app/product')
+            .then((res) => res.json())
+            .then((data) => {
+                  console.log(data)
+                  setTools(data)
+            })
+           
       },[])
       const product = tools.slice(0 , 9)
       const newProduct = product.reverse()
+      console.log(tools)
       return (
             <div className='my-40 max-w-7xl m-auto px-3'>
                   <h1 className='text-4xl text-black mb-9 ptext'>Our Tols</h1>

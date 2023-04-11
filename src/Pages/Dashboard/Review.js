@@ -44,7 +44,7 @@ const Review = () => {
                      comment: data.comment
                      
                   }
-                  fetch('https://vast-refuge-05190.herokuapp.com/review' , {
+                  fetch('https://electic-bd-server-git-main-mamun2232.vercel.app/review' , {
                         method: "POSt",
                         headers:{
                               'Content-type': 'application/json',

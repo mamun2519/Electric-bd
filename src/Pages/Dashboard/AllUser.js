@@ -10,7 +10,7 @@ import UserRow from './UserRow';
 const AllUser = () => {
       const [deleteDoctor, setDeleteDoctor] = useState(null)
 
-      const { data: users, isLoading, refetch } = useQuery('users', () => fetch('https://vast-refuge-05190.herokuapp.com/user', {
+      const { data: users, isLoading, refetch } = useQuery('users', () => fetch('https://electic-bd-server-git-main-mamun2232.vercel.app/user', {
             method: 'GET',
             headers: {
                   "authorization": `Bearer ${localStorage.getItem('accessToken')}`

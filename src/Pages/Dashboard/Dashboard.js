@@ -15,6 +15,7 @@ import {  RiAdminLine } from 'react-icons/ri';
 const Dashboard = () => {
       const [user] = useAuthState(auth)
       const [admin] = useAdmins(user)
+      console.log(admin)
       return (
             <div className='dashborad  max-w-7xl m-auto'>
             <div class="drawer drawer-mobile">

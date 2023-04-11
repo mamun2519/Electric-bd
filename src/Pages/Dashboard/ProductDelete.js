@@ -6,7 +6,7 @@ const ProductDelete = ({productDelete , setProductDelete , refetch}) => {
       const {_id , name} = productDelete
 
       const productDeleteHendeler = () =>{
-            fetch(`https://vast-refuge-05190.herokuapp.com/product/${_id}` , {
+            fetch(`https://electic-bd-server-git-main-mamun2232.vercel.app/product/${_id}` , {
                   method: "DELETE",
                   headers:{
                         'Content-type': 'application/json',

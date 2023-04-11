@@ -13,7 +13,7 @@ const CheckoutForm = ({ data }) => {
       const { price, productName, email, name, _id } = data
       console.log(data);
       useEffect(() => {
-            fetch('https://vast-refuge-05190.herokuapp.com/create-payment-intent', {
+            fetch('https://electic-bd-server-git-main-mamun2232.vercel.app/create-payment-intent', {
                   method: "POST",
                   headers: {
                         'content-type': 'application/json',
@@ -92,7 +92,7 @@ const CheckoutForm = ({ data }) => {
                         transactionId: paymentIntent.id
                   }
 
-                  fetch(`https://vast-refuge-05190.herokuapp.com/booking/${_id}`, {
+                  fetch(`https://electic-bd-server-git-main-mamun2232.vercel.app/booking/${_id}`, {
                         method: 'PATCH',
                         headers: {
                               'content-type': 'application/json',
